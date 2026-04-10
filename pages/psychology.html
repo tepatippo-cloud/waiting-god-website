@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จิตวิทยาการเทรด - WaitingGod</title>
+    <meta name="description"
+        content="E-book จิตวิทยาการเทรดจาก WaitingGod เรียนรู้แนวคิดและจิตวิทยาที่จะยกระดับการเทรดของคุณ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css?v=1.3">
+    <style>
+        /* Psychology Page Specific Styles */
+        .psych-hero {
+            padding: 140px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .psych-hero h1 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            margin-bottom: 1rem;
+        }
+
+        .psych-hero p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-neon);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: #c084fc;
+        }
+
+        .breadcrumb .sep {
+            opacity: 0.4;
+        }
+
+        /* E-book Slider */
+        .slider-container {
+            width: 100%;
+            max-width: 1528px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            padding: 2rem 0;
+            display: flex;
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+
+        .ebooks-slider {
+            display: flex;
+            gap: 2rem;
+            width: max-content;
+            animation: slideLeft 40s linear infinite;
+        }
+
+        .ebooks-slider:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-50% - 1rem));
+            }
+        }
+
+        .ebook-card {
+            width: 350px;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, rgba(15, 20, 40, 0.6), rgba(30, 25, 60, 0.4));
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .ebook-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), transparent, rgba(59, 130, 246, 0.2));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .ebook-card:hover::before {
+            opacity: 1;
+        }
+
+        .ebook-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(168, 85, 247, 0.15), 0 0 40px rgba(168, 85, 247, 0.05);
+            border-color: rgba(168, 85, 247, 0.2);
+        }
+
+        .ebook-cover {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--border-glass);
+            transition: var(--transition);
+        }
+
+        .ebook-card:hover .ebook-cover {
+            transform: scale(1.03);
+        }
+
+        .ebook-cover-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ebook-cover-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to top, rgba(5, 9, 20, 0.9), transparent);
+            pointer-events: none;
+        }
+
+        .ebook-info {
+            padding: 1.5rem 1.8rem 2rem;
+        }
+
+        .ebook-badge {
+            display: inline-block;
+            padding: 0.3rem 0.9rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+        }
+
+        .badge-strategy {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .badge-psychology {
+            background: rgba(168, 85, 247, 0.15);
+            color: #c084fc;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+
+        .badge-exclusive {
+            background: rgba(234, 179, 8, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(234, 179, 8, 0.3);
+        }
+
+        .badge-beginner {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .ebook-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+        }
+
+        .ebook-info .ebook-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .ebook-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .ebook-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .btn-ebook {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(135deg, var(--primary-neon), #7c3aed);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn-ebook:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(168, 85, 247, 0.4);
+        }
+
+        .btn-ebook.coming-soon {
+            background: linear-gradient(135deg, rgba(100, 116, 139, 0.3), rgba(71, 85, 105, 0.3));
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            color: var(--text-muted);
+            cursor: default;
+        }
+
+        .btn-ebook.coming-soon:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ebook-card {
+                width: 300px;
+            }
+
+            .psych-hero {
+                padding: 120px 0 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background System -->
+    <div class="bg-layer">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo" style="text-decoration:none;">
+                <span class="logo-text"><span class="logo-accent">Waiting</span>God</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="blog.html" data-i18n="nav_features">Blog</a></li>
+                <li><a href="wealth-machine.html#performance" data-i18n="nav_performance">ผลงาน</a></li>
+                <li><a href="wealth-machine.html#pricing" data-i18n="nav_pricing">แพ็คเกจ</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-btn">
+                        <span data-i18n="nav_resource" style="color: var(--primary-neon);">Resource</span>
+                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-menu mega-menu">
+                        <a href="wealth-machine.html" class="nav-dropdown-item">
+                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                    </path>
+                                </svg></div>
+                            <div class="item-content">
+                                <span class="title" data-i18n="res_1_title">Wealth Machine</span>
+                                <span class="desc" data-i18n="res_1_desc">Create financial freedom with EA robot
+                                    trade.</span>
+                            </div>
+                        </a>
+                        <a href="psychology.html" class="nav-dropdown-item"
+                            style="background:rgba(255,255,255,0.05); border-radius:12px;">
+                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                                    </path>
+                                </svg></div>
+                            <div class="item-content">
+                                <span class="title" data-i18n="res_2_title"
+                                    style="color:var(--primary-neon);">Psychology</span>
+                                <span class="desc" data-i18n="res_2_desc">All psychology you need to know in
+                                    trading.</span>
+                            </div>
+                        </a>
+                        <a href="tools.html" class="nav-dropdown-item">
+                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z">
+                                    </path>
+                                </svg></div>
+                            <div class="item-content">
+                                <span class="title" data-i18n="res_3_title">เครื่องมือ</span>
+                                <span class="desc" data-i18n="res_3_desc">เข้าถึงฟีเจอร์เครื่องมือที่หลากหลาย</span>
+                            </div>
+                        </a>
+                        <a href="../index.html#faq" class="nav-dropdown-item">
+                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                    </path>
+                                </svg></div>
+                            <div class="item-content">
+                                <span class="title" data-i18n="res_4_title">FAQs</span>
+                                <span class="desc" data-i18n="res_4_desc">Get answers.</span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-right">
+                <div class="lang-dropdown">
+                    <button class="lang-globe-btn" aria-label="Select Language">
+                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418">
+                            </path>
+                        </svg>
+                    </button>
+                    <div class="lang-menu"></div>
+                </div>
+                <a href="../index.html#pricing" class="btn btn-primary nav-cta">เริ่มใช้งานเลย</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-glow"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge" data-i18n="ebook_hero_badge"
+                    style="font-size: 1.05rem !important; padding: 0.6rem 1.4rem !important;">📚 อีบุ๊ก</div>
+                <h1 data-i18n="ebook_hero_title" style="line-height: 1.4 !important;">อีบุ๊กของ<br><span
+                        class="text-gradient">ผู้ประสบความสำเร็จ</span></h1>
+                <p data-i18n="ebook_hero_desc">ผมเชื่อว่า E-book ด้านล่าง โดยเฉพาะ Psychology
+                    จะพาคุณดำดิ่งไปทำความรู้จัก ตัวตนที่ทำให้เทรดเดอร์กว่า 90% แพ้และออกจากตลาดไป
+                    เพื่อเข้าใกล้ความฝันที่ทุกท่านวาดไว้</p>
+                <div class="ebook-categories" style="display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                    <span class="ebook-badge badge-beginner"
+                        style="font-size: 0.85rem; padding: 0.4rem 1.2rem; text-transform: uppercase; letter-spacing: 0.5px;">🔰
+                        BEGINNER</span>
+                    <span class="ebook-badge badge-strategy"
+                        style="font-size: 0.85rem; padding: 0.4rem 1.2rem; text-transform: uppercase; letter-spacing: 0.5px;">📘
+                        STRATEGY</span>
+                    <span class="ebook-badge badge-psychology"
+                        style="font-size: 0.85rem; padding: 0.4rem 1.2rem; text-transform: uppercase; letter-spacing: 0.5px;">🧠
+                        PSYCHOLOGY</span>
+                    <span class="ebook-badge badge-exclusive"
+                        style="font-size: 0.85rem; padding: 0.4rem 1.2rem; text-transform: uppercase; letter-spacing: 0.5px;">🤖
+                        EA TRADING BOT</span>
+                </div>
+            </div>
+            <div class="hero-image-wrapper"
+                style="position: relative; display: flex; justify-content: center; align-items: center; overflow: visible;">
+                <style>
+                    @keyframes magic-float-img {
+
+                        0%,
+                        100% {
+                            transform: translateY(0);
+                        }
+
+                        50% {
+                            transform: translateY(-25px);
+                        }
+                    }
+
+                    .book-static-wrapper {
+                        width: 160%;
+                        max-width: 900px;
+                        min-width: 450px;
+                        animation: magic-float-img 5s ease-in-out infinite;
+                        filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.5));
+                        flex-shrink: 0;
+                    }
+
+                    .book-static-wrapper img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                    }
+                </style>
+                <div class="book-static-wrapper">
+                    <img src="../assets/open_book.png.png" alt="Open Book">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- E-book Slider Container -->
+    <section class="section" style="padding-top: 0;">
+        <div class="slider-container">
+            <div class="ebooks-slider">
+
+                <!-- SET 1 -->
+                <!-- E-book 4: Trader 101 -->
+                <div class="ebook-card">
+                    <div class="ebook-cover-wrapper">
+                        <img src="../assets/ebook_trader101_v2.png" alt="Trader 101" class="ebook-cover">
+                    </div>
+                    <div class="ebook-info">
+                        <span class="ebook-badge badge-beginner">🔰 Beginner</span>
+                        <h3>Trader 101</h3>
+                        <p class="ebook-desc">หนังสือที่เหมาะสำหรับผู้เริ่มต้น ปูพื้นฐานการเทรดให้แน่น
+                            ตั้งแต่คำศัพท์ไปจนถึงการวางแผนเตรียมตัวเข้าเทรดจริง</p>
+                        <div class="ebook-meta">
+                            <span>📄 30 หน้า</span>
+                            <span>⭐ ระดับเริ่มต้น</span>
+                        </div>
+                        <a href="#" class="btn-ebook coming-soon">🔒 เร็วๆ นี้ (Coming Soon)</a>
+                    </div>
+                </div>
+
+                <!-- E-book 1: Systematic Trading -->
+                <div class="ebook-card">
+                    <div class="ebook-cover-wrapper">
+                        <img src="../assets/ebook_systematic_v2.png" alt="Systematic Trading" class="ebook-cover">
+                    </div>
+                    <div class="ebook-info">
+                        <span class="ebook-badge badge-strategy">📘 Strategy</span>
+                        <h3>Systematic Trading</h3>
+                        <p class="ebook-desc">เรียนรู้การสร้างระบบเทรดอย่างเป็นระบบ ตั้งแต่การวางแผน วิเคราะห์ตลาด
+                            จนถึงการ Backtest อย่างมืออาชีพ</p>
+                        <div class="ebook-meta">
+                            <span>📄 45 หน้า</span>
+                            <span>⭐⭐ ระดับกลาง</span>
+                        </div>
+                        <a href="#" class="btn-ebook coming-soon">🔒 เร็วๆ นี้ (Coming Soon)</a>
+                    </div>
+                </div>
+
+                <!-- E-book 2: Psychology that make you million$ -->
+                <div class="ebook-card">
+                    <div class="ebook-cover-wrapper">
+                        <img src="../assets/ebook_psychology2.png" alt="Psychology that make you million$"
+                            class="ebook-cover">
+                    </div>
+                    <div class="ebook-info">
+                        <span class="ebook-badge badge-psychology">🧠 Psychology</span>
+                        <h3>Psychology that made me a Million$</h3>
+                        <p class="ebook-desc">
+                            หนังสือที่จะพาคุณดำดิ่งไปทำความรู้จักกับ <br>"ตัวตน" ที่ทำให้เทรดเดอร์กว่า 90%
+                            แพ้และออกจากตลาดไป</p>
+                        <div class="ebook-meta">
+                            <span>📄 60 หน้า</span>
+                            <span>⭐⭐⭐ ระดับสูง</span>
+                        </div>
+                        <a href="#" class="btn-ebook coming-soon">🔒 เร็วๆ นี้ (Coming Soon)</a>
+                    </div>
+                </div>
+
+                <!-- E-book 3: WaitingGod Range Breakout Guides -->
+                <div class="ebook-card">
+                    <div class="ebook-cover-wrapper">
+                        <img src="../assets/ebook_breakout_v3.png" alt="WaitingGod Range Breakout Guides"
+                            class="ebook-cover">
+                    </div>
+                    <div class="ebook-info">
+                        <span class="ebook-badge badge-exclusive">🤖 EA trading bot</span>
+                        <h3>WaitingGod Range Breakout Guides</h3>
+                        <p class="ebook-desc">คู่มือเฉพาะของ WaitingGod สอนกลยุทธ์ Range Breakout แบบเจาะลึก
+                            พร้อมตัวอย่าง Setup จริงและวิธีใช้งานร่วมกับ EA</p>
+                        <div class="ebook-meta">
+                            <span>📄 35 หน้า</span>
+                            <span>⭐ คู่มือการใช้งาน</span>
+                        </div>
+                        <a href="#" class="btn-ebook coming-soon">🔒 เร็วๆ นี้ (Coming Soon)</a>
+                    </div>
+                </div>
+
+                <!-- SET 2 (Duplicated for Infinite Loop) -->
+                <!-- E-book 4: Trader 101 -->
+                <div class="ebook-card">
+                    <div class="ebook-cover-wrapper">
+                        <img src="../assets/ebook_trader101_v2.png" alt="Trader 101" class="ebook-cover">
+                    </div>
+                    <div class="ebook-info">
+                        <span class="ebook-badge badge-beginner">🔰 Beginner</span>
+                        <h3>Trader 101</h3>
+                        <p class="ebook-desc">หนังสือที่เหมาะสำหรับผู้เริ่มต้น ปูพื้นฐานการเทรดให้แน่น
+                            ตั้งแต่คำศัพท์ไปจนถึงการวางแผนเตรียมตัวเข้าเทรดจริง</p>
+                        <div class="ebook-meta">
+                            <span>📄 30 หน้า</span>
+                            <span>⭐ ระดับต้น</span>
+                        </div>
+                        <a href="#" class="btn-ebook coming-soon">🔒 เร็วๆ นี้ (Coming Soon)</a>
+                    </div>
+                </div>
+
+                <!-- E-book 1: Systematic Trading -->
+                <div class="ebook-card">
+                    <div class="ebook-cover-wrapper">
+                        <img src="../assets/ebook_systematic_v2.png" alt="Systematic Trading" class="ebook-cover">
+                    </div>
+                    <div class="ebook-info">
+                        <span class="ebook-badge badge-strategy">📘 Strategy</span>
+                        <h3>Systematic Trading</h3>
+                        <p class="ebook-desc">เรียนรู้การสร้างระบบเทรดอย่างเป็นระบบ ตั้งแต่การวางแผน วิเคราะห์ตลาด
+                            จนถึงการ Backtest อย่างมืออาชีพ</p>
+                        <div class="ebook-meta">
+                            <span>📄 45 หน้า</span>
+                            <span>⭐ ระดับกลาง-สูง</span>
+                        </div>
+                        <a href="#" class="btn-ebook coming-soon">🔒 เร็วๆ นี้ (Coming Soon)</a>
+                    </div>
+                </div>
+
+                <!-- E-book 2: Psychology that make you million$ -->
+                <div class="ebook-card">
+                    <div class="ebook-cover-wrapper">
+                        <img src="../assets/ebook_psychology2.png" alt="Psychology that make you million$"
+                            class="ebook-cover">
+                    </div>
+                    <div class="ebook-info">
+                        <span class="ebook-badge badge-psychology">🧠 Psychology</span>
+                        <h3>Psychology That Make You Million$</h3>
+                        <p class="ebook-desc">
+                            เจาะลึกจิตวิทยาการเทรดที่จะเปลี่ยนให้คุณเป็นเทรดเดอร์ที่ทำกำไรได้อย่างสม่ำเสมอ เข้าใจอารมณ์
+                            ควบคุมความกลัวและโลภ</p>
+                        <div class="ebook-meta">
+                            <span>📄 60 หน้า</span>
+                            <span>⭐ ทุกระดับ</span>
+                        </div>
+                        <a href="#" class="btn-ebook coming-soon">🔒 เร็วๆ นี้ (Coming Soon)</a>
+                    </div>
+                </div>
+
+                <!-- E-book 3: WaitingGod Range Breakout Guides -->
+                <div class="ebook-card">
+                    <div class="ebook-cover-wrapper">
+                        <img src="../assets/ebook_breakout_v3.png" alt="WaitingGod Range Breakout Guides"
+                            class="ebook-cover">
+                    </div>
+                    <div class="ebook-info">
+                        <span class="ebook-badge badge-exclusive">🤖 EA trading bot</span>
+                        <h3>WaitingGod Range Breakout Guides</h3>
+                        <p class="ebook-desc">คู่มือเฉพาะของ WaitingGod สอนกลยุทธ์ Range Breakout แบบเจาะลึก
+                            พร้อมตัวอย่าง Setup จริงและวิธีใช้งานร่วมกับ EA</p>
+                        <div class="ebook-meta">
+                            <span>📄 35 หน้า</span>
+                            <span>⭐ เฉพาะสมาชิก Pro+</span>
+                        </div>
+                        <a href="#" class="btn-ebook coming-soon">🔒 เร็วๆ นี้ (Coming Soon)</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="border-top: 1px solid var(--border-glass);">
+        <div class="container footer-content-new">
+            <div class="footer-col brand-col">
+                <h3 class="footer-title-lg" style="margin-bottom:0.5rem;"><span class="logo-accent"
+                        style="color:var(--primary-neon);">Waiting</span><br>God</h3>
+                <p class="footer-desc-new" data-i18n="footer_desc_new">ก้าวสู่อนาคตของการเทรดอัตโนมัติด้วย AI
+                    ที่ออกแบบมาเพื่อชัยชนะของทุกคน พร้อมรับข่าวสารและข้อเสนอพิเศษ</p>
+                <div class="footer-subscribe-box">
+                    <input type="email" placeholder="Enter your email" aria-label="Enter your email">
+                    <button class="btn-subscribe-icon" aria-label="Subscribe">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4 class="footer-title" data-i18n="footer_menu_title">เมนู</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="wealth-machine.html">Wealth Machine</a></li>
+                    <li><a href="psychology.html">Psychology</a></li>
+                    <li><a href="tools.html">Tools</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4 class="footer-title" data-i18n="footer_support_title">Support</h4>
+                <ul>
+                    <li><a href="../index.html#faq" data-i18n="footer_menu_4">คำถามที่พบบ่อย (FAQ)</a></li>
+                    <li><a href="#" data-i18n="footer_contact">ติดต่อเรา</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col social-col">
+                <h4 class="footer-title" data-i18n="footer_follow_us">Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Facebook"><svg width="20" height="20" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3.81l.39-4h-4.2V7a1 1 0 011-1h3z"></path>
+                        </svg></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><svg width="20" height="20" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><svg width="20" height="20" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bottom-new">
+                <p data-i18n="copyright">&copy; 2026 WaitingGod Intelligence. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/i18n.js?v=1.1"></script>
+    <script src="../js/script.js?v=1.2"></script>
+</body>
+
+</html>

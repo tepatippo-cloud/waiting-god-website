@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ทำสิ่งนี้ให้เป็นนิสัย - WaitingGod Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css?v=1.3">
+    <style>
+        /* ===== POST SPECIFIC STYLES ===== */
+        .post-header {
+            padding: 140px 0 60px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .post-category {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #c084fc;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .post-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 24px;
+            color: #ffffff;
+            font-weight: 800;
+            line-height: 1.2;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .post-author-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #2a2a35;
+        }
+
+        .post-cover-wrap {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+            aspect-ratio: 16 / 9;
+        }
+
+        .post-cover-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .post-content {
+            max-width: 800px;
+            margin: 0 auto 80px;
+            position: relative;
+            z-index: 2;
+            font-size: 1.35rem;
+            line-height: 1.9;
+            color: #d1d5db; /* Lighter text for good reading */
+            background: rgba(10, 15, 30, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 40px 48px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-content h2, .post-content h3 {
+            color: #ffffff;
+            margin-top: 48px;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .post-content h2 {
+            font-size: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 12px;
+        }
+
+        .post-content h3 {
+            font-size: 1.5rem;
+        }
+
+        .post-content p {
+            margin-bottom: 24px;
+        }
+
+        .post-content strong {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .post-content blockquote {
+            padding: 24px 32px;
+            margin: 40px 0;
+            background: rgba(168, 85, 247, 0.05);
+            border-left: 4px solid #a855f7;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        /* Post Hero Card Layout (TraderLion Style) */
+        .post-hero-card {
+            display: flex;
+            background: linear-gradient(145deg, rgba(20, 25, 45, 0.8), rgba(10, 15, 30, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(168, 85, 247, 0.1);
+            align-items: stretch;
+            min-height: 480px;
+        }
+
+        .phc-left {
+            flex: 1;
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            position: relative;
+        }
+
+        .phc-left::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.15), transparent 70%);
+            pointer-events: none;
+        }
+
+        .phc-title {
+            font-size: clamp(2.5rem, 4vw, 3.8rem);
+            color: #ffffff;
+            font-weight: 800;
+            line-height: 1.15;
+            margin: 20px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .phc-author-text {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .phc-right {
+            flex: 0 0 50%;
+            position: relative;
+        }
+
+        .phc-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .post-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 18px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #d1d5db;
+            background: rgba(255,255,255,0.03);
+            white-space: nowrap;
+        }
+
+        .post-header-meta {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .post-hero-card {
+                flex-direction: column-reverse;
+                min-height: auto;
+            }
+            .phc-right {
+                flex: none;
+                height: 350px;
+            }
+            .phc-left {
+                padding: 40px 30px;
+                text-align: center;
+                align-items: center;
+            }
+            .phc-title {
+                text-align: center;
+            }
+        }
+
+        /* Post Reveal Animation */
+        .post-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+
+        .post-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .post-content-img {
+            width: 100%;
+            border-radius: 16px;
+            margin: 40px 0;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            object-fit: contain;
+            background: #000;
+        }
+
+        /* Related Articles Area */
+        .related-section {
+            padding: 80px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .related-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .related-title {
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        /* Same styling as blog.html for cards */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: #0f1423;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(168, 85, 247, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(168, 85, 247, 0.2);
+        }
+
+        .blog-card-img-wrap {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background: #1a2235;
+            overflow: hidden;
+        }
+
+        .blog-card-img-wrap img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-card-img-wrap img {
+            transform: scale(1.05);
+        }
+
+        .blog-card-content {
+            padding: 30px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .blog-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 50px;
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            color: #c084fc;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            align-self: flex-start;
+        }
+
+        .blog-card-title {
+            font-size: 1.25rem;
+            color: #ffffff;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 24px;
+            flex: 1;
+        }
+
+        .blog-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 16px;
+            margin-top: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Background System -->
+    <div class="bg-layer">
+        <div class="glow-orb orb-1" style="opacity: 0.2;"></div>
+        <div class="glow-orb orb-3" style="opacity: 0.15; bottom: 0; top: auto;"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo" style="text-decoration:none;">
+                <span class="logo-text"><span class="logo-accent">Waiting</span>God</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="blog.html" class="nav-active" style="color: var(--primary-neon);">Blog</a></li>
+                <li><a href="wealth-machine.html#performance">ผลงาน</a></li>
+                <li><a href="wealth-machine.html#pricing">แพ็คเกจ</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-btn">
+                        <span>Resource</span>
+                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="nav-dropdown-menu mega-menu">
+                        <a href="wealth-machine.html" class="nav-dropdown-item">
+                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg></div>
+                            <div class="item-content">
+                                <span class="title">Wealth Machine</span>
+                                <span class="desc">Create financial freedom with EA robot trade.</span>
+                            </div>
+                        </a>
+                        <a href="psychology.html" class="nav-dropdown-item">
+                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></div>
+                            <div class="item-content">
+                                <span class="title">Psychology</span>
+                                <span class="desc">All psychology you need to know in trading.</span>
+                            </div>
+                        </a>
+                        <a href="tools.html" class="nav-dropdown-item">
+                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg></div>
+                            <div class="item-content">
+                                <span class="title">เครื่องมือ</span>
+                                <span class="desc">เข้าถึงฟีเจอร์เครื่องมือที่หลากหลาย</span>
+                            </div>
+                        </a>
+                        <a href="../index.html#faq" class="nav-dropdown-item">
+                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                            <div class="item-content">
+                                <span class="title">FAQs</span>
+                                <span class="desc">Get answers.</span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-right">
+                <div class="lang-dropdown">
+                    <div class="lang-menu"></div>
+                </div>
+                <a href="login.html" class="btn btn-login">Log In</a>
+                <a href="wealth-machine.html#pricing" class="btn btn-primary nav-cta">เริ่มใช้งานเลย</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Hero Section -->
+    <div class="container" style="padding-top: 140px; margin-bottom: 60px; position: relative; z-index: 2;">
+        
+        <!-- Hero Cover Image -->
+        <div class="post-cover-wrap post-reveal" style="max-width: 1000px; border-radius: 12px; overflow: hidden; margin: 0 auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+            <img src="../assets/blog_cover_habit.png" alt="ทำสิ่งนี้ให้เป็นนิสัย" style="width: 100%; display: block; object-fit: cover;">
+        </div>
+
+        <!-- Post Meta Information (Below Card) -->
+        <header style="margin-top: 40px; text-align: left;" class="post-reveal">
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px;">
+                <span class="post-pill">WaitingGod</span>
+                <span class="post-pill">TRADING PSYCHOLOGY</span>
+            </div>
+            <h2 style="font-size: clamp(2rem, 3vw, 2.5rem); font-weight: 800; color: #fff; margin-bottom: 20px; text-align: left;">รู้เท่าทันอารมณ์: กุญแจสำคัญสู่ความสำเร็จที่ยั่งยืน</h2>
+            
+            <div class="post-header-meta">
+                <img src="../assets/logo_dog.jpg" alt="Author" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid #2a2a35; object-fit: cover;">
+                <div style="display: flex; flex-direction: row; align-items: center; gap: 12px; flex-wrap: wrap;">
+                    <strong style="color: #e2e8f0;">WaitingGod</strong>
+                    <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem;">
+                        <span>April 2, 2026</span> <span style="color: #475569;">•</span> <span>6 min read</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- Article Content -->
+    <main class="container post-content">
+        <!-- เกริ่นนำ -->
+        <p class="post-reveal">ก่อนอื่น ผมขอแสดงความยินดีด้วยนะครับที่ท่านมีระบบเทรดเป็นของตัวเองแล้ว เพียงแค่นี้ท่านก็หลุดออกมาจากวงจรอุบาทว์ขั้นต้นแล้ว ทุกคนรู้ไหมครับว่ามีเทรดเดอร์หลายคน ที่ใช้เวลาตามหาระบบเทรดหลายปี บางคนใช้เวลาเดินย่ำอยู่ที่เดิมมากกว่า 8 ปี แต่ก็ยังแพ้ เพราะเขาคิดว่าสิ่งที่เขารู้มันไม่เพียงพอที่จะชนะตลาดได้</p>
+        
+        <p class="post-reveal">แต่ปัญหาไม่ได้อยู่ที่ระบบ <strong>มันอยู่ที่ผู้ใช้ระบบ</strong> ที่ยังไม่มีความรู้ความเข้าใจและการปฏิบัติที่มากพอในเรื่องต่อไปนี้</p>
+
+        <!-- ความเร็วของจิต -->
+        <h2 class="post-reveal">ความเร็วของจิต</h2>
+        
+        <p class="post-reveal">เทรดเดอร์ทุกคนมีความรู้สึกโลภ ความรู้สึกโกรธ ผ่านการเทรดของเรา และความรู้สึกดังกล่าวนำพาเราไปสู่หายนะ อะไรคือสิ่งที่ผมอยากจะสื่อ?? ผมอยากบอกว่าทุกครั้งที่ผลลัพธ์ออกมาแย่ ออกมาไม่ดี <strong>มันไม่ใช่ความล้มเหลวของคุณครับ</strong> มันเป็นเพราะว่าคุณอาจจะยังไม่รู้ว่า อารมณ์ดังกล่าว มันเกิดขึ้นตามธรรมชาติ และมันสามารถหายไปเองได้!!</p>
+        
+        <p class="post-reveal">สิ่งที่แยกเทรดเดอร์ที่ยังแพ้และเทรดเดอร์ที่ประสบความสำเร็จออกจากกันก็คือ ความสามารถในการรับรู้อารมณ์ดังกล่าว ผมอยากให้ทุกท่านดูแผนภาพด้านล่างครับ</p>
+
+        <!-- รูปภาพที่ 2 -->
+        <img src="../assets/blog_diagram_elite.png" alt="กลไกของอารมณ์" class="post-content-img post-reveal" style="background:#1a1c23; border: none; padding: 20px;">
+
+        <p class="post-reveal">คนที่มีระบบเทรดที่มีความได้เปรียบ (Edge) แต่ก็ยังแพ้อยู่ นั่นเป็นเพราะว่าคนคุมเกมทั้งหมด คือ <strong>"อารมณ์"</strong> ในทางกลับกัน คนที่สามารถสร้างช่องว่างระหว่างอารมณ์กับการลงมือทำผ่านการรู้อารมณ์ของตนเอง (Knowing mind) จะสามารถหลีกเลี่ยงการกระทำที่ไม่พึงประสงค์ออกไปได้</p>
+        
+        <p class="post-reveal">อาจจะมีบางท่านที่สงสัยว่า <em>"เราไม่เห็นจะต้องโลภจะต้องโกรธเลย มีระบบก็ทำตามระบบแค่นั้น"</em> แต่ในเมื่อเรายังเป็นสิ่งมีชีวิตที่เรียกว่ามนุษย์ ผนวกกับสิ่งแวดล้อมการเทรดที่เต็มไปด้วยสิ่งกระตุ้น ทั้งกราฟราคา สื่อโซเชียลมีเดีย ฯลฯ เราไม่สามารถห้ามตัวเราไม่ให้เกิดความรู้สึกดังกล่าวได้ มันเป็นไปไม่ได้</p>
+        
+        <p class="post-reveal">ซึ่งแผนภาพตัวอย่างเป็นเพียงตัวอย่างคร่าว ๆ ที่คอยแสดงถึงกลไกการลงมือทำในสิ่งที่เราไม่พึงประสงค์ แต่ในความเป็นจริง มนุษย์ไม่ได้มีแค่ 2 ความรู้สึก ไม่ได้มีแค่โลภหรือโกรธ แต่ยังมีความกลัว ความเบื่อ ความรู้สึกไม่พอใจ จากทั้งการเทรดและจากสังคมแวดล้อม ความไม่มั่นใจในระบบเทรด ความคิดปรุงแต่ง สิ่งเหล่านี้ล้วนเป็นปัจจัยที่ทำให้เราแพ้ทั้งสิ้น</p>
+
+        <blockquote class="post-reveal">
+            หน้าที่ของเทรดเดอร์ที่ประสบความสำเร็จ มีความจำเป็นจะต้องทำความรู้จักในทุกสภาพอารมณ์อย่างหลีกเลี่ยงไม่ได้
+        </blockquote>
+
+        <!-- เมื่อเราเห็น เขาจะหายไป -->
+        <h2 class="post-reveal">เมื่อเราเห็น เขาจะหายไป</h2>
+        
+        <p class="post-reveal">พฤติกรรมของจิตของเรามีความคล้ายกับโลกทางควอนตัมฟิสิกส์อย่างไม่น่าเชื่อ เมื่อเราพยายามจะที่จะวัดค่าหรือไปมองมัน มันจะทำพฤติกรรมที่เปลี่ยนไปไม่เหมือนกับตอนที่เราไม่ไปวัดมัน เช่นเดียวกับจิตที่หากเราสังเกตเห็น มันจะดิ้น สั่นคลอนและแปรสภาพไปไม่มากก็น้อย</p>
+        
+        <p class="post-reveal">ผมไม่ได้บอกว่าแค่การรู้จิตซื่อ ๆ จะสามารถกำจัดความรู้สึกด้านลบของเทรดเดอร์ได้ คุณปลูกเมล็ดพันธุ์แห่งนิสัยมานานนับหลายเดือนหรือหลายปี <strong>การรู้ซื่อ ๆ เพียงครั้งเดียว ไม่สามารถทำลายอำนาจการควบคุมของจิตได้ แต่มันมากพอที่จะเจาะรูรั่วให้เมล็ดพันธุ์แห่งนิสัยนั้น</strong></p>
+        
+        <p class="post-reveal">ผมอยากให้ทุกท่านเริ่มสังเกตตนเองดูว่า เรามักจะทำนิสัยแย่ ๆ ตอนไหน และในขณะนั้นร่างกายหรืออารมณ์ของเรามักจะมีรูปแบบอย่างไร เช่น ใจเต้นแรง หน้าท้องเกร็ง ใบหน้าเกร็ง ไม่มีสติ เป็นต้น อยากให้ทุกท่านหมั่นเฝ้าสังเกตไปเรื่อย ๆ</p>
+        
+        <p class="post-reveal">เมื่อท่านเฝ้าสังเกตไปถึงจุดนึง ท่านจะเห็นความคิดและอารมณ์ที่อยู่ในช่วงตั้งไข่ ก่อนที่มันจะฟักออกมาทำให้เราทำนิสัยแย่ ๆ เดิม ๆ นั้นอีก ความเร็วในการรู้เท่าทันจิตของท่านจะเพิ่มขึ้น ซึ่งช่วยสร้างช่องว่างระหว่างอารมณ์กับการลงมือทำบางสิ่งบางอย่างให้กว้างขึ้น และกว้างยิ่งขึ้นไปอีก ซึ่งมากเพียงพอให้สมองส่วนตรรกะ (Prefrontal Cortex) กระโดดเข้ามาในเกม เพื่อหยุดยั้งอำนาจควบคุมจากสมองส่วนอารมณ์ (Limbic System)</p>
+
+        <!-- บทสรุป -->
+        <h2 class="post-reveal">บทสรุป</h2>
+        
+        <p class="post-reveal">ในส่วนสุดท้ายนี้ผมอยากบอกทุกท่านว่า เทรดเดอร์ไม่สามารถหักห้ามจิต (ในที่นี้คืออารมณ์ ความคิด) ไม่ให้โลภ ไม่ให้โกรธ หรือไม่ให้เกิดอารมณ์ที่เราไม่ปรารถนาได้ แต่เทรดเดอร์ทุก ๆ คนมีหน้าที่มองและรับรู้ถึงการมีอยู่ของสิ่งนั้น</p>
+        
+        <p class="post-reveal">เช่นเดียวกับหลักความจริงในพระพุทธศาสนาที่ว่า <strong>"ทุกข์ให้รู้ ไม่ใช่ให้ละ เดี๋ยวทุกข์นั้นมันก็ดับไป"</strong> มีแต่ตัวเทรดเดอร์เองที่ปล่อยให้จิตนั้นเข้ามามีบทบาทในเกมการเทรดของเรา</p>
+        
+        <p class="post-reveal">แล้วทุกท่านล่ะครับ มีความคิดเห็นเกี่ยวกับประสบการณ์นี้อย่างไร?</p>
+
+    </main>
+
+    <!-- Related Articles -->
+    <section class="related-section">
+        <div class="container">
+            <div class="related-header post-reveal">
+                <h3 class="related-title">บทความที่เกี่ยวข้อง</h3>
+                <a href="blog.html" class="btn btn-outline" style="border: 1px solid rgba(255,255,255,0.2); color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 50px;">Explore more articles →</a>
+            </div>
+            
+            <div class="blog-grid">
+                <!-- Card 1 -->
+                <a href="blog-post-2.html" class="blog-card post-reveal">
+                    <div class="blog-card-img-wrap">
+                        <img src="../assets/blog_cover_5percent.png" alt="Trader 5%">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-badge">TRADING PSYCHOLOGY</span>
+                        <h2 class="blog-card-title">TRADER แค่ 5% รู้จักสิ่งนี้: ศัตรูที่คร่าชีวิตเทรดเดอร์</h2>
+                        <div class="blog-card-footer">
+                            <span>March 31, 2026</span>
+                            <span>5 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="blog-post-1.html" class="blog-card post-reveal" style="transition-delay: 100ms;">
+                    <div class="blog-card-img-wrap">
+                        <img src="../assets/blog_cover_fomo.png" alt="FOMO Cover">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-badge">TRADING PSYCHOLOGY</span>
+                        <h2 class="blog-card-title">5 Ways To Beat FOMO</h2>
+                        <div class="blog-card-footer">
+                            <span>March 9, 2026</span>
+                            <span>7 min read</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content-new">
+            <div class="footer-col brand-col">
+                <h3 class="footer-title-lg" style="margin-bottom:0.5rem;"><span class="logo-accent" style="color:var(--primary-neon);">Waiting</span><br>God</h3>
+                <p class="footer-desc-new">ก้าวสู่อนาคตของการเทรดอัตโนมัติด้วย AI ที่ออกแบบมาเพื่อชัยชนะของทุกคน พร้อมรับข่าวสารและข้อเสนอพิเศษ</p>
+                <div class="footer-subscribe-box">
+                    <input type="email" placeholder="Enter your email" aria-label="Enter your email">
+                    <button class="btn-subscribe-icon" aria-label="Subscribe">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="footer-col links-col">
+                <h4 class="footer-title">เมนู</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="wealth-machine.html">Wealth Machine</a></li>
+                    <li><a href="psychology.html">Psychology</a></li>
+                    <li><a href="tools.html">Tools</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col contact-col">
+                <h4 class="footer-title">Support</h4>
+                <ul>
+                    <li><a href="../index.html#faq">คำถามที่พบบ่อย (FAQ)</a></li>
+                    <li><a href="#">ติดต่อเรา</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col social-col">
+                <h4 class="footer-title">Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Facebook"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3.81l.39-4h-4.2V7a1 1 0 011-1h3z"></path></svg></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bottom-new">
+                <p>&copy; 2026 WaitingGod Intelligence. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS for Post Reveal Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.post-reveal');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.05,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            reveals.forEach(el => observer.observe(el));
+        });
+    </script>
+    <script src="../js/script.js?v=2.0"></script>
+</body>
+</html>

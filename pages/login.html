@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up - WaitingGod</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0f0f0f; 
+            color: #fff; 
+            min-height: 100vh; 
+            display: flex; 
+        }
+        
+        /* Layout */
+        .auth-wrapper {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+        .auth-left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background-color: #0f0f0f; 
+        }
+        .auth-right {
+            display: none;
+            flex: 1;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .auth-right { 
+                display: flex; 
+                flex-direction: column; 
+                justify-content: flex-end; 
+            }
+        }
+
+        /* Form Container */
+        .form-container {
+            width: 100%;
+            max-width: 350px;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .form-logo {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+        }
+        .form-logo .accent {
+            color: #a855f7;
+        }
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .form-subtitle {
+            font-size: 0.875rem;
+            color: #a1a1aa; 
+        }
+
+        /* Inputs */
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .input-group label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #fff;
+        }
+        .input-wrap {
+            position: relative;
+        }
+        .input-field {
+            width: 100%;
+            height: 42px;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid #27272a; 
+            background: rgba(255,255,255,0.02);
+            color: #fff;
+            font-size: 0.875rem;
+            transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #a855f7; 
+            background: rgba(168, 85, 247, 0.05);
+            box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2);
+        }
+        .input-field::placeholder {
+            color: #52525b;
+        }
+
+        /* Password Toggle */
+        .pwd-toggle {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+            border: none;
+            color: #71717a;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .pwd-toggle:hover { color: #fff; }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            height: 42px;
+            padding: 0 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 100%;
+            border: none;
+        }
+        .btn-primary {
+            background-color: #fff;
+            color: #000;
+            margin-top: 0.5rem;
+        }
+        .btn-primary:hover { opacity: 0.9; }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid #27272a;
+            color: #fff;
+        }
+        .btn-outline:hover { 
+            background-color: rgba(255,255,255,0.05); 
+            border-color: #3f3f46; 
+        }
+
+        .btn-link {
+            background: none;
+            border: none;
+            color: #fff;
+            padding: 0 0 0 0.25rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline;
+        }
+        .btn-link:hover { text-decoration: underline; }
+
+        /* Form Switch & Divider */
+        .auth-bottom {
+            text-align: center;
+            font-size: 0.875rem;
+            margin-top: 1.5rem;
+            color: #a1a1aa;
+        }
+        
+        .divider {
+            position: relative;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            border-top: 1px solid #27272a;
+            z-index: 0;
+        }
+        .divider span {
+            position: relative;
+            z-index: 1;
+            background-color: #0f0f0f;
+            padding: 0 0.5rem;
+            font-size: 0.75rem;
+            color: #71717a;
+        }
+
+        /* Right Side Details */
+        .right-gradient {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(to top, rgba(5,5,5,0.9) 0%, rgba(5,5,5,0.5) 50%, transparent 100%);
+            z-index: 1;
+        }
+        .quote-container {
+            position: relative;
+            z-index: 2;
+            padding: 2.5rem;
+            text-align: center;
+            color: #fff;
+        }
+        .quote-text {
+            font-size: 1.125rem;
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+        }
+        .quote-author {
+            font-size: 0.875rem;
+            font-weight: 300;
+            color: #a1a1aa;
+        }
+
+        /* Utilities */
+        .animate-pulse {
+            animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .3; }
+        }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+
+<div class="auth-wrapper">
+    <!-- Left Section: Form -->
+    <div class="auth-left">
+        
+        <!-- Sign In Form -->
+        <div class="form-container" id="signin-form">
+            <div class="form-header">
+                <a href="../index.html" class="form-logo"><span class="accent">Waiting</span>God</a>
+                <h1 class="form-title">Sign in to your account</h1>
+                <p class="form-subtitle">Enter your email below to sign in</p>
+            </div>
+            
+            <form onsubmit="handleSubmit(event)">
+                <div class="input-group">
+                    <label for="signin-email">Email</label>
+                    <input type="email" id="signin-email" class="input-field" placeholder="m@example.com" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="signin-password">Password</label>
+                    <div class="input-wrap">
+                        <input type="password" id="signin-password" class="input-field" placeholder="Password" style="padding-right: 2.5rem;" required>
+                        <button type="button" class="pwd-toggle" onclick="togglePassword('signin-password', 'signin-eye')" aria-label="Toggle Password">
+                            <span id="signin-eye">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Sign In</button>
+            </form>
+            
+            <div class="auth-bottom">
+                Don't have an account?<button class="btn-link" onclick="toggleForms(false)">Sign up</button>
+            </div>
+            
+            <div class="divider">
+                <span>Or continue with</span>
+            </div>
+            
+            <button class="btn btn-outline" type="button" onclick="handleSubmit(event)">
+                <svg viewBox="0 0 24 24" width="16" height="16" style="margin-right:0.5rem;"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/><path d="M1 1h22v22H1z" fill="none"/></svg>
+                Continue with Google
+            </button>
+        </div>
+
+        <!-- Sign Up Form -->
+        <div class="form-container hidden" id="signup-form">
+            <div class="form-header">
+                <a href="../index.html" class="form-logo"><span class="accent">Waiting</span>God</a>
+                <h1 class="form-title">Create an account</h1>
+                <p class="form-subtitle">Enter your details below to sign up</p>
+            </div>
+            
+            <form onsubmit="handleSubmit(event)">
+                <div class="input-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" class="input-field" placeholder="John Doe" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" class="input-field" placeholder="m@example.com" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="signup-password">Password</label>
+                    <div class="input-wrap">
+                        <input type="password" id="signup-password" class="input-field" placeholder="Password" style="padding-right: 2.5rem;" required>
+                        <button type="button" class="pwd-toggle" onclick="togglePassword('signup-password', 'signup-eye')" aria-label="Toggle Password">
+                            <span id="signup-eye">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            
+            <div class="auth-bottom">
+                Already have an account?<button class="btn-link" onclick="toggleForms(true)">Sign in</button>
+            </div>
+            
+            <div class="divider">
+                <span>Or continue with</span>
+            </div>
+            
+            <button class="btn btn-outline" type="button" onclick="handleSubmit(event)">
+                <svg viewBox="0 0 24 24" width="16" height="16" style="margin-right:0.5rem;"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/><path d="M1 1h22v22H1z" fill="none"/></svg>
+                Continue with Google
+            </button>
+        </div>
+    </div>
+
+    <!-- Right Section: Graphic & Quote -->
+    <div class="auth-right" id="auth-bg">
+        <div class="right-gradient"></div>
+        <div class="quote-container">
+            <p class="quote-text">
+                “<span id="typewriter-text"></span><span class="animate-pulse">|</span>”
+            </p>
+            <cite class="quote-author" id="quote-author"></cite>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Configuration Data
+    // We use trading/market charts for the images since the user requested "trading" theme
+    const signInContent = {
+        quote: "Success Trader = Edge + Knowing mind",
+        author: "— WaitingGod",
+        img: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop"
+    };
+
+    const signUpContent = {
+        quote: "Risk comes from not knowing what you're doing. A new chapter awaits.",
+        author: "— WaitingGod",
+        img: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=1200&auto=format&fit=crop"
+    };
+
+    // State
+    let isSignInView = true;
+    let typewriterTimeout;
+
+    // Elements
+    const textSpan = document.getElementById('typewriter-text');
+    const authorSpan = document.getElementById('quote-author');
+    const authBg = document.getElementById('auth-bg');
+
+    // Typewriter logic
+    function typeWriter(text, index, speed) {
+        if (index < text.length) {
+            textSpan.innerHTML += text.charAt(index);
+            index++;
+            typewriterTimeout = setTimeout(() => typeWriter(text, index, speed), speed);
+        }
+    }
+
+    // Refresh right pane based on current state
+    function updateRightPane() {
+        clearTimeout(typewriterTimeout);
+        textSpan.innerHTML = '';
+        
+        const content = isSignInView ? signInContent : signUpContent;
+        
+        // Update background
+        authBg.style.backgroundImage = `url('${content.img}')`;
+        // Update author
+        authorSpan.textContent = content.author;
+        // Run typewriter
+        typeWriter(content.quote, 0, 45); // 45ms speed per char
+    }
+
+    // Toggle between forms
+    function toggleForms(showSignIn) {
+        isSignInView = showSignIn;
+        const signinForm = document.getElementById('signin-form');
+        const signupForm = document.getElementById('signup-form');
+        
+        if (showSignIn) {
+            signinForm.classList.remove('hidden');
+            signupForm.classList.add('hidden');
+        } else {
+            signinForm.classList.add('hidden');
+            signupForm.classList.remove('hidden');
+        }
+        
+        updateRightPane();
+    }
+
+    // Icons
+    const eyeOpenSvg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>';
+    const eyeClosedSvg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path><line x1="2" y1="2" x2="22" y2="22"></line></svg>';
+
+    // Toggle password visibility
+    function togglePassword(inputId, eyeId) {
+        const input = document.getElementById(inputId);
+        const eye = document.getElementById(eyeId);
+        if (input.type === 'password') {
+            input.type = 'text';
+            eye.innerHTML = eyeClosedSvg;
+        } else {
+            input.type = 'password';
+            eye.innerHTML = eyeOpenSvg;
+        }
+    }
+
+    // Form submission
+    function handleSubmit(e) {
+        e.preventDefault();
+        // Redirect to main page after mock login
+        window.location.href = '../index.html';
+    }
+
+    // Init display
+    document.addEventListener('DOMContentLoaded', () => {
+        updateRightPane();
+    });
+</script>
+
+</body>
+</html>

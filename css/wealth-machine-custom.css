@@ -1,0 +1,260 @@
+/* Wealth Machine Custom Aesthetics: Purple, White, Orange Harmony */
+/* Core Typography & Spacing */
+body {
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+.title,
+.logo-text {
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+p,
+.desc,
+.stat-label,
+.perf-label {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Highlight Colors */
+.text-gradient {
+    background: linear-gradient(135deg, #a855f7, #ff8c00) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.logo-accent {
+    color: #a855f7 !important;
+}
+
+/* Hero Adjustments */
+.hero-content h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.5px;
+    margin-bottom: 1.2rem;
+}
+
+.hero-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.badge {
+    background: rgba(255, 140, 0, 0.15) !important;
+    color: #ff8c00 !important;
+    border-color: rgba(255, 140, 0, 0.3) !important;
+    font-size: 1.05rem !important;
+    padding: 0.6rem 1.4rem !important;
+}
+
+/* Hero Stats */
+.stat-value {
+    font-size: 1.5rem !important;
+    color: #a855f7 !important;
+    font-weight: 700;
+    margin-bottom: 0.2rem !important;
+}
+
+.stat-label {
+    font-size: 0.9rem !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    line-height: 1.5 !important;
+}
+
+/* Buttons Update */
+.btn-primary {
+    background: linear-gradient(135deg, #a855f7, #8b3dcc) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4) !important;
+    font-size: 0.95rem !important;
+    padding: 0.8rem 1.8rem !important;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.7) !important;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+    padding: 0.8rem 1.8rem !important;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Section Layouts */
+.section {
+    padding: 56px 0 !important;
+}
+
+.section-header h2 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem) !important;
+    margin-bottom: 1rem !important;
+}
+
+.section-header p {
+    font-size: 1.2rem !important;
+    max-width: 650px !important;
+}
+
+/* Box / Cards Size & Styling */
+.glass-card {
+    padding: 2rem 2rem !important;
+    border-radius: 20px !important;
+    background: linear-gradient(160deg, rgba(20, 25, 40, 0.8), rgba(168, 85, 247, 0.08)) !important;
+    border: 1px solid rgba(168, 85, 247, 0.25) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.glass-card:hover {
+    border-color: #ff8c00 !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(168, 85, 247, 0.2) !important;
+    transform: translateY(-8px) scale(1.02) !important;
+}
+
+.feature-card h3 {
+    font-size: 1.6rem !important;
+    margin-bottom: 1.2rem !important;
+    color: #ffffff !important;
+}
+
+.feature-card p {
+    font-size: 1.15rem !important;
+    line-height: 1.8 !important;
+}
+
+.feature-icon {
+    font-size: 4rem !important;
+    margin-bottom: 2rem !important;
+}
+
+/* Background Glare Overrides */
+.orb-1 {
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.4), transparent 70%) !important;
+}
+
+.orb-2 {
+    background: radial-gradient(circle, rgba(255, 140, 0, 0.25), transparent 70%) !important;
+}
+
+/* Performance Specifics */
+.perf-value.warning {
+    color: #ff8c00 !important;
+}
+
+.perf-value {
+    font-size: 2rem !important;
+    font-weight: 800;
+    color: #ffffff !important;
+}
+
+.perf-value.text-gradient {
+    background: linear-gradient(135deg, #ff8c00, #a855f7) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.perf-label {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.5rem !important;
+    display: block;
+}
+
+.perf-stats-grid {
+    gap: 3rem !important;
+}
+
+/* Pricing adjustments */
+.pricing-card {
+    padding: 2rem 2rem !important;
+    border-radius: 20px !important;
+}
+
+.pricing-header-google h3 {
+    font-size: 1.8rem !important;
+    color: #ffffff !important;
+}
+
+.plan-desc {
+    font-size: 1.1rem !important;
+}
+
+.price-current {
+    font-size: 2rem !important;
+    color: #ffffff !important;
+}
+
+.price-unit {
+    font-size: 1.2rem !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.pricing-features-google li {
+    font-size: 1.1rem !important;
+    margin-bottom: 1.2rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.pro-highlight {
+    border: 2px solid #ff8c00 !important;
+    box-shadow: 0 0 40px rgba(255, 140, 0, 0.15) !important;
+}
+
+.ultra-badge {
+    background: linear-gradient(135deg, #ff8c00, #ff5e00) !important;
+    color: #ffffff !important;
+    font-size: 1.05rem !important;
+    padding: 0.5rem 1.5rem !important;
+}
+
+.btn-google-primary {
+    background: linear-gradient(135deg, #ff8c00, #ff5e00) !important;
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+    padding: 0.85rem 1.8rem !important;
+    border: none !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    width: 100% !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-google-primary:hover {
+    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-google-dark {
+    font-size: 0.95rem !important;
+    padding: 0.85rem 1.8rem !important;
+    border: 1px solid #a855f7 !important;
+    color: #ffffff !important;
+    background: rgba(168, 85, 247, 0.1) !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    width: 100% !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-google-dark:hover {
+    background: rgba(168, 85, 247, 0.25) !important;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3) !important;
+    transform: translateY(-2px) !important;
+}

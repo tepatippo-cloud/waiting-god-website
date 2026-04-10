@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="tools_page_title">เครื่องมือ - WaitingGod</title>
+    <meta name="description" data-i18n-attr="content|tools_hero_desc" content="เครื่องมือการเทรดจาก WaitingGod">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css?v=1.3">
+    <style>
+        /* ===== TOOLS PAGE STYLES ===== */
+        .tools-hero {
+            padding: 140px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .tools-hero h1 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            margin-bottom: 1rem;
+        }
+
+        .tools-hero p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 620px;
+            margin: 0 auto 2rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-neon);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover { color: #c084fc; }
+        .breadcrumb .sep { opacity: 0.4; }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            padding: 0 0 80px;
+        }
+
+        .tool-card {
+            background: linear-gradient(135deg, rgba(15, 20, 40, 0.7), rgba(30, 25, 60, 0.5));
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.4), transparent, rgba(230, 0, 255, 0.2));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .tool-card { position: relative; }
+
+        .tool-card:hover::before { opacity: 1; }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(168, 85, 247, 0.2), 0 0 50px rgba(168, 85, 247, 0.07);
+            border-color: rgba(168, 85, 247, 0.3);
+        }
+
+        .tool-icon-wrap {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(230, 0, 255, 0.08));
+            padding: 2.5rem 2rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .tool-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(230, 0, 255, 0.2));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+        }
+
+        .tool-icon-text h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .tool-badge {
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-free {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .badge-pro-member {
+            background: rgba(168, 85, 247, 0.15);
+            color: #c084fc;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+
+        .tool-body {
+            padding: 1.5rem 2rem 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .tool-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            flex: 1;
+        }
+
+        /* Tool Content Panel (interactive area) */
+        .tool-panel {
+            background: rgba(5, 9, 20, 0.5);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .tool-panel .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+        }
+
+        .tool-panel label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.2rem;
+            display: block;
+        }
+
+        .tool-panel input, .tool-panel select {
+            width: 100%;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border-glass);
+            border-radius: 8px;
+            padding: 0.55rem 0.8rem;
+            color: #fff;
+            font-size: 0.88rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+
+        .tool-panel input:focus, .tool-panel select:focus {
+            border-color: var(--primary-neon);
+        }
+
+        .tool-panel select option { background: #0b0f19; }
+
+        .tool-result {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.25);
+            border-radius: 10px;
+            padding: 0.7rem 1rem;
+            font-size: 0.88rem;
+            color: #e9d5ff;
+            min-height: 38px;
+            line-height: 1.5;
+        }
+
+        .tool-calc-btn {
+            width: 100%;
+            padding: 0.65rem;
+            background: linear-gradient(135deg, var(--primary-neon), #7c3aed);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .tool-calc-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+        }
+
+        .tool-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.35s ease;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .tool-cta-btn.coming-soon {
+            background: rgba(100, 116, 139, 0.2);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            color: var(--text-muted);
+            cursor: default;
+        }
+
+        .tool-cta-btn.open {
+            background: linear-gradient(135deg, var(--primary-neon), #7c3aed);
+            color: #fff;
+        }
+
+        .tool-cta-btn.open:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(168, 85, 247, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .tools-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .tools-hero { padding: 120px 0 40px; }
+            .tool-panel .input-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background System -->
+    <div class="bg-layer">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo" style="text-decoration:none;">
+                <span class="logo-text"><span class="logo-accent">Waiting</span>God</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="blog.html" data-i18n="nav_features">Blog</a></li>
+                <li><a href="wealth-machine.html#performance" data-i18n="nav_performance">ผลงาน</a></li>
+                <li><a href="wealth-machine.html#pricing" data-i18n="nav_pricing">แพ็คเกจ</a></li>
+                <li class="nav-dropdown">
+                    <button class="nav-dropdown-btn">
+                        <span data-i18n="nav_resource" style="color: var(--primary-neon);">Resource</span>
+                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="nav-dropdown-menu mega-menu">
+                        <a href="wealth-machine.html" class="nav-dropdown-item">
+                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg></div>
+                            <div class="item-content">
+                                <span class="title" data-i18n="res_1_title">Wealth Machine</span>
+                                <span class="desc" data-i18n="res_1_desc">Create financial freedom with EA robot trade.</span>
+                            </div>
+                        </a>
+                        <a href="psychology.html" class="nav-dropdown-item">
+                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></div>
+                            <div class="item-content">
+                                <span class="title" data-i18n="res_2_title">Psychology</span>
+                                <span class="desc" data-i18n="res_2_desc">All psychology you need to know in trading.</span>
+                            </div>
+                        </a>
+                        <a href="tools.html" class="nav-dropdown-item" style="background:rgba(255,255,255,0.05); border-radius:12px;">
+                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg></div>
+                            <div class="item-content">
+                                <span class="title" data-i18n="res_3_title" style="color:var(--primary-neon);">เครื่องมือ</span>
+                                <span class="desc" data-i18n="res_3_desc">เข้าถึงฟีเจอร์เครื่องมือที่หลากหลาย</span>
+                            </div>
+                        </a>
+                        <a href="../index.html#faq" class="nav-dropdown-item">
+                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                            <div class="item-content">
+                                <span class="title" data-i18n="res_4_title">FAQs</span>
+                                <span class="desc" data-i18n="res_4_desc">Get answers.</span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="nav-right">
+                <div class="lang-dropdown">
+                    <button class="lang-globe-btn" aria-label="Select Language">
+                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"></path>
+                        </svg>
+                    </button>
+                    <div class="lang-menu"></div>
+                </div>
+                <a href="../pages/login.html" class="btn btn-login" data-i18n="nav_login">เข้าสู่ระบบ</a>
+                <a href="../index.html#pricing" class="btn btn-primary nav-cta" data-i18n="nav_cta">เริ่มใช้งานเลย</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="tools-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html" data-i18n="back_home">หน้าแรก</a>
+                <span class="sep">›</span>
+                <span data-i18n="res_3_title">เครื่องมือ</span>
+            </div>
+            <h1 data-i18n="tools_hero_title">⚙️ เครื่องมือ<span class="text-gradient">การเทรด</span></h1>
+            <p data-i18n="tools_hero_desc">รวมเครื่องมือคำนวณและช่วยวิเคราะห์ที่จำเป็นสำหรับนักเทรดมืออาชีพ</p>
+        </div>
+    </section>
+
+    <!-- Tools Grid -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="tools-grid">
+
+                <!-- Tool 1: Lot / SL / TP Calculator -->
+                <div class="tool-card">
+                    <div class="tool-icon-wrap">
+                        <div class="tool-icon">📐</div>
+                        <div class="tool-icon-text">
+                            <h3 data-i18n="tool_1_title">คำนวณ Lot / SL / TP</h3>
+                            <span class="tool-badge badge-free" data-i18n="tool_badge_free">ฟรี</span>
+                        </div>
+                    </div>
+                    <div class="tool-body">
+                        <p data-i18n="tool_1_desc">คำนวณขนาด Lot, จุด Stop Loss และ Take Profit ของแต่ละคู่เงินอย่างแม่นยำ</p>
+                        <div class="tool-panel">
+                            <div class="input-row">
+                                <div>
+                                    <label>Account Balance (USD)</label>
+                                    <input type="number" id="lot-balance" placeholder="10000" value="10000">
+                                </div>
+                                <div>
+                                    <label>Risk % per Trade</label>
+                                    <input type="number" id="lot-risk" placeholder="1" value="1" step="0.1">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div>
+                                    <label>Stop Loss (pips)</label>
+                                    <input type="number" id="lot-sl" placeholder="20" value="20">
+                                </div>
+                                <div>
+                                    <label>Currency Pair</label>
+                                    <select id="lot-pair">
+                                        <option value="10">EURUSD / GBPUSD</option>
+                                        <option value="10">USDJPY</option>
+                                        <option value="10">XAUUSD (Gold)</option>
+                                        <option value="10">BTCUSD</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="tool-calc-btn" onclick="calcLot()">คำนวณ / Calculate</button>
+                            <div class="tool-result" id="lot-result">กรอกข้อมูลและกดคำนวณ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 2: Compound Interest Calculator -->
+                <div class="tool-card">
+                    <div class="tool-icon-wrap">
+                        <div class="tool-icon">📈</div>
+                        <div class="tool-icon-text">
+                            <h3 data-i18n="tool_2_title">คำนวณ Compound Interest</h3>
+                            <span class="tool-badge badge-free" data-i18n="tool_badge_free">ฟรี</span>
+                        </div>
+                    </div>
+                    <div class="tool-body">
+                        <p data-i18n="tool_2_desc">คำนวณการเติบโตของเงินทุนแบบทบต้น เพื่อวางแผนเป้าหมายทางการเงิน</p>
+                        <div class="tool-panel">
+                            <div class="input-row">
+                                <div>
+                                    <label>เงินต้น (USD)</label>
+                                    <input type="number" id="comp-principal" placeholder="1000" value="1000">
+                                </div>
+                                <div>
+                                    <label>ผลตอบแทน % ต่อเดือน</label>
+                                    <input type="number" id="comp-rate" placeholder="5" value="5" step="0.5">
+                                </div>
+                            </div>
+                            <div>
+                                <label>จำนวนเดือน</label>
+                                <input type="number" id="comp-months" placeholder="12" value="12">
+                            </div>
+                            <button class="tool-calc-btn" onclick="calcCompound()">คำนวณ / Calculate</button>
+                            <div class="tool-result" id="comp-result">กรอกข้อมูลและกดคำนวณ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 3: Contract Size (Futures) -->
+                <div class="tool-card">
+                    <div class="tool-icon-wrap">
+                        <div class="tool-icon">📊</div>
+                        <div class="tool-icon-text">
+                            <h3 data-i18n="tool_3_title">คำนวณ Contract Size (Futures)</h3>
+                            <span class="tool-badge badge-free" data-i18n="tool_badge_free">ฟรี</span>
+                        </div>
+                    </div>
+                    <div class="tool-body">
+                        <p data-i18n="tool_3_desc">คำนวณขนาด Contract สำหรับสายฟิวเจอร์ส รองรับหลากหลายตลาด</p>
+                        <div class="tool-panel">
+                            <div>
+                                <label>ตลาด / Market</label>
+                                <select id="fut-market" onchange="updateFutMarket()">
+                                    <option value="S50:200">S50 (200 THB/pt)</option>
+                                    <option value="GOLD:1000">Gold Futures (1,000 THB/B)</option>
+                                    <option value="ES:50">ES S&P500 ($50/pt)</option>
+                                    <option value="NQ:20">NQ Nasdaq ($20/pt)</option>
+                                    <option value="CL:1000">Crude Oil ($1,000/ct)</option>
+                                </select>
+                            </div>
+                            <div class="input-row">
+                                <div>
+                                    <label>เงินทุน / Capital</label>
+                                    <input type="number" id="fut-capital" placeholder="100000" value="100000">
+                                </div>
+                                <div>
+                                    <label>Risk % ต่อ Trade</label>
+                                    <input type="number" id="fut-risk" placeholder="2" value="2" step="0.5">
+                                </div>
+                            </div>
+                            <div>
+                                <label>Stop Loss (points)</label>
+                                <input type="number" id="fut-sl" placeholder="10" value="10">
+                            </div>
+                            <button class="tool-calc-btn" onclick="calcFutures()">คำนวณ / Calculate</button>
+                            <div class="tool-result" id="fut-result">กรอกข้อมูลและกดคำนวณ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 4: WaitingGod Indicator -->
+                <div class="tool-card">
+                    <div class="tool-icon-wrap">
+                        <div class="tool-icon">🔮</div>
+                        <div class="tool-icon-text">
+                            <h3 data-i18n="tool_4_title">WaitingGod Indicator (TradingView)</h3>
+                            <span class="tool-badge badge-pro-member" data-i18n="tool_badge_pro">สมาชิก Pro+</span>
+                        </div>
+                    </div>
+                    <div class="tool-body">
+                        <p data-i18n="tool_4_desc">Indicator สุดพิเศษออกแบบโดย WaitingGod สำหรับแพลตฟอร์ม TradingView</p>
+                        <div class="tool-panel" style="align-items:center; text-align:center; padding: 1.5rem 1rem;">
+                            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📉📈</div>
+                            <p style="color: var(--text-muted); font-size:0.85rem; margin:0;">Range Breakout · Trend Filter · Signal Alert</p>
+                            <p style="color: rgba(192,132,252,0.8); font-size:0.82rem; margin-top:0.5rem;">✅ ใช้ได้ฟรีสำหรับสมาชิก Pro+</p>
+                        </div>
+                        <button class="tool-cta-btn coming-soon" data-i18n="tool_cta_soon">🔒 เร็วๆ นี้</button>
+                    </div>
+                </div>
+
+                <!-- Tool 5: Trading Journal -->
+                <div class="tool-card">
+                    <div class="tool-icon-wrap">
+                        <div class="tool-icon">📓</div>
+                        <div class="tool-icon-text">
+                            <h3 data-i18n="tool_5_title">Trading Journal</h3>
+                            <span class="tool-badge badge-pro-member" data-i18n="tool_badge_pro">สมาชิก Pro+</span>
+                        </div>
+                    </div>
+                    <div class="tool-body">
+                        <p data-i18n="tool_5_desc">บันทึกและวิเคราะห์ผลการเทรดเพื่อสร้างระบบที่มีความได้เปรียบ Edge ที่ดีขึ้น</p>
+                        <div class="tool-panel" style="align-items:center; text-align:center; padding: 1.5rem 1rem;">
+                            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📊📝</div>
+                            <p style="color: var(--text-muted); font-size:0.85rem; margin:0;">บันทึก Trade · วิเคราะห์ Win Rate · ติด Tag กลยุทธ์</p>
+                            <p style="color: rgba(192,132,252,0.8); font-size:0.82rem; margin-top:0.5rem;">✅ เข้าถึงได้สำหรับสมาชิก Pro+</p>
+                        </div>
+                        <button class="tool-cta-btn coming-soon" data-i18n="tool_cta_soon">🔒 เร็วๆ นี้</button>
+                    </div>
+                </div>
+
+                <!-- Tool 6: Position Size Calculator (myfxbook-style) -->
+                <div class="tool-card">
+                    <div class="tool-icon-wrap">
+                        <div class="tool-icon">🎯</div>
+                        <div class="tool-icon-text">
+                            <h3>Position Size Calculator</h3>
+                            <span class="tool-badge badge-free">ฟรี</span>
+                        </div>
+                    </div>
+                    <div class="tool-body">
+                        <p>คำนวณขนาดโพซิชันที่เหมาะสมตาม Risk Management โดยอ้างอิง Balance, Risk % และ Stop Loss เหมือน myfxbook</p>
+                        <div class="tool-panel">
+                            <div class="input-row">
+                                <div>
+                                    <label>Account Currency</label>
+                                    <select id="ps-acct-currency">
+                                        <option value="USD">USD</option>
+                                        <option value="EUR">EUR</option>
+                                        <option value="GBP">GBP</option>
+                                        <option value="THB">THB</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Account Size</label>
+                                    <input type="number" id="ps-balance" placeholder="10000" value="10000">
+                                </div>
+                            </div>
+                            <!-- Risk toggle row -->
+                            <div class="input-row" style="align-items: flex-end;">
+                                <div>
+                                    <label id="ps-risk-label">Risk %</label>
+                                    <input type="number" id="ps-risk" placeholder="1" value="1" step="0.1" min="0.01" max="100">
+                                </div>
+                                <div style="display:flex; align-items:flex-end; gap:0.4rem;">
+                                    <div style="flex:1">
+                                        <label>Stop Loss (pips)</label>
+                                        <input type="number" id="ps-sl-pips" placeholder="20" value="20" min="0.1">
+                                    </div>
+                                    <button type="button" onclick="togglePsRiskMode()" id="ps-swap-btn"
+                                        title="Switch between % and amount"
+                                        style="flex-shrink:0; padding:0.55rem 0.7rem; background:rgba(168,85,247,0.2); border:1px solid rgba(168,85,247,0.45); border-radius:8px; color:#c084fc; cursor:pointer; font-size:1rem; line-height:1; transition:all 0.2s; margin-bottom:0;">⇄</button>
+                                </div>
+                            </div>
+                            <div>
+                                <label>Currency Pair</label>
+                                <select id="ps-pair">
+                                    <option value="EURUSD">EURUSD</option>
+                                    <option value="GBPUSD">GBPUSD</option>
+                                    <option value="AUDUSD">AUDUSD</option>
+                                    <option value="NZDUSD">NZDUSD</option>
+                                    <option value="USDJPY">USDJPY</option>
+                                    <option value="USDCHF">USDCHF</option>
+                                    <option value="USDCAD">USDCAD</option>
+                                    <option value="XAUUSD">XAUUSD (Gold)</option>
+                                    <option value="BTCUSD">BTCUSD</option>
+                                </select>
+                            </div>
+                            <button class="tool-calc-btn" onclick="calcPositionSize()">คำนวณ / Calculate</button>
+                            <div class="tool-result" id="ps-result">กรอกข้อมูลและกดคำนวณ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 7: Profit Calculator (myfxbook-style) -->
+                <div class="tool-card">
+                    <div class="tool-icon-wrap">
+                        <div class="tool-icon">💹</div>
+                        <div class="tool-icon-text">
+                            <h3>Profit Calculator</h3>
+                            <span class="tool-badge badge-free">ฟรี</span>
+                        </div>
+                    </div>
+                    <div class="tool-body">
+                        <p>คำนวณกำไรหรือขาดทุนของ Forex/Gold จาก Open Price, Close Price และขนาด Lot เหมือน myfxbook</p>
+                        <div class="tool-panel">
+                            <div class="input-row">
+                                <div>
+                                    <label>Action</label>
+                                    <select id="pc-action">
+                                        <option value="buy">Buy</option>
+                                        <option value="sell">Sell</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Currency Pair</label>
+                                    <select id="pc-pair">
+                                        <option value="EURUSD">EURUSD</option>
+                                        <option value="GBPUSD">GBPUSD</option>
+                                        <option value="AUDUSD">AUDUSD</option>
+                                        <option value="NZDUSD">NZDUSD</option>
+                                        <option value="USDJPY">USDJPY</option>
+                                        <option value="USDCHF">USDCHF</option>
+                                        <option value="USDCAD">USDCAD</option>
+                                        <option value="XAUUSD">XAUUSD (Gold)</option>
+                                        <option value="BTCUSD">BTCUSD</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div>
+                                    <label>Open Price</label>
+                                    <input type="number" id="pc-open" placeholder="1.08500" value="1.08500" step="0.00001">
+                                </div>
+                                <div>
+                                    <label>Close Price</label>
+                                    <input type="number" id="pc-close" placeholder="1.09000" value="1.09000" step="0.00001">
+                                </div>
+                            </div>
+                            <div class="input-row">
+                                <div>
+                                    <label>Lot Size</label>
+                                    <input type="number" id="pc-lot" placeholder="0.1" value="0.1" step="0.01" min="0.01">
+                                </div>
+                                <div>
+                                    <label>Account Currency</label>
+                                    <select id="pc-acct-currency">
+                                        <option value="USD">USD</option>
+                                        <option value="EUR">EUR</option>
+                                        <option value="GBP">GBP</option>
+                                        <option value="THB">THB</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="tool-calc-btn" onclick="calcProfit()">คำนวณ / Calculate</button>
+                            <div class="tool-result" id="pc-result">กรอกข้อมูลและกดคำนวณ</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="border-top: 1px solid var(--border-glass);">
+        <div class="container footer-content-new">
+            <div class="footer-col brand-col">
+                <h3 class="footer-title-lg" style="margin-bottom:0.5rem;"><span class="logo-accent" style="color:var(--primary-neon);">Waiting</span><br>God</h3>
+                <p class="footer-desc-new" data-i18n="footer_desc_new">ก้าวสู่อนาคตของการเทรดอัตโนมัติด้วย AI ที่ออกแบบมาเพื่อชัยชนะของทุกคน พร้อมรับข่าวสารและข้อเสนอพิเศษ</p>
+                <div class="footer-subscribe-box">
+                    <input type="email" placeholder="Enter your email" aria-label="Enter your email">
+                    <button class="btn-subscribe-icon" aria-label="Subscribe">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="footer-col links-col">
+                <h4 class="footer-title" data-i18n="footer_menu_title">เมนู</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="wealth-machine.html">Wealth Machine</a></li>
+                    <li><a href="psychology.html">Psychology</a></li>
+                    <li><a href="tools.html">Tools</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col contact-col">
+                <h4 class="footer-title" data-i18n="footer_support_title">Support</h4>
+                <ul>
+                    <li><a href="../index.html#faq" data-i18n="footer_menu_4">คำถามที่พบบ่อย (FAQ)</a></li>
+                    <li><a href="#" data-i18n="footer_contact">ติดต่อเรา</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col social-col">
+                <h4 class="footer-title" data-i18n="footer_follow_us">Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Facebook"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3.81l.39-4h-4.2V7a1 1 0 011-1h3z"></path></svg></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bottom-new">
+                <p data-i18n="copyright">&copy; 2026 WaitingGod Intelligence. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/i18n.js"></script>
+    <script src="../js/script.js?v=1.2"></script>
+    <script>
+        // ===== TOOL CALCULATORS =====
+
+        // Lot / SL / TP Calculator
+        function calcLot() {
+            const balance = parseFloat(document.getElementById('lot-balance').value) || 0;
+            const risk = parseFloat(document.getElementById('lot-risk').value) || 1;
+            const sl = parseFloat(document.getElementById('lot-sl').value) || 1;
+
+            const riskAmount = balance * (risk / 100);
+            const pipValue = 10; // standard for most pairs per standard lot
+            const lotSize = riskAmount / (sl * pipValue);
+            const tp1 = sl * 1.5;
+            const tp2 = sl * 2;
+
+            document.getElementById('lot-result').innerHTML =
+                `💰 Risk Amount: <strong>$${riskAmount.toFixed(2)}</strong><br>
+                 📦 Lot Size: <strong>${lotSize.toFixed(3)} lots</strong><br>
+                 🛑 SL: ${sl} pips | 🎯 TP 1:1.5 = ${tp1.toFixed(0)} pips | TP 1:2 = ${tp2.toFixed(0)} pips`;
+        }
+
+        // Compound Interest Calculator
+        function calcCompound() {
+            const principal = parseFloat(document.getElementById('comp-principal').value) || 0;
+            const rate = parseFloat(document.getElementById('comp-rate').value) / 100 || 0;
+            const months = parseInt(document.getElementById('comp-months').value) || 1;
+
+            const finalAmount = principal * Math.pow(1 + rate, months);
+            const profit = finalAmount - principal;
+            const totalReturn = ((finalAmount / principal) - 1) * 100;
+
+            document.getElementById('comp-result').innerHTML =
+                `📈 เงินทุนสุดท้าย: <strong>$${finalAmount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong><br>
+                 💵 กำไรรวม: <strong>$${profit.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</strong><br>
+                 🚀 ผลตอบแทนรวม: <strong>${totalReturn.toFixed(2)}%</strong> ใน ${months} เดือน`;
+        }
+
+        // Futures Contract Size Calculator
+        const futureMarkets = { 'S50:200': 200, 'GOLD:1000': 1000, 'ES:50': 50, 'NQ:20': 20, 'CL:1000': 1000 };
+
+        function calcFutures() {
+            const marketKey = document.getElementById('fut-market').value;
+            const multiplier = futureMarkets[marketKey] || 50;
+            const capital = parseFloat(document.getElementById('fut-capital').value) || 0;
+            const risk = parseFloat(document.getElementById('fut-risk').value) / 100 || 0.02;
+            const sl = parseFloat(document.getElementById('fut-sl').value) || 1;
+
+            const riskAmount = capital * risk;
+            const contracts = Math.floor(riskAmount / (sl * multiplier));
+            const actualRisk = contracts * sl * multiplier;
+
+            document.getElementById('fut-result').innerHTML =
+                `💰 Risk Amount: <strong>${riskAmount.toLocaleString()}</strong><br>
+                 📦 Contracts: <strong>${contracts} สัญญา</strong><br>
+                 🎯 Actual Risk: <strong>${actualRisk.toLocaleString()}</strong> (${((actualRisk/capital)*100).toFixed(2)}%)`;
+        }
+
+        // =============================================
+        // Position Size Calculator (myfxbook-style)
+        // Pip value per standard lot (1.0 lot) in USD
+        // =============================================
+        const pipValuePerLot = {
+            'EURUSD': 10,   // $10 per pip per std lot
+            'GBPUSD': 10,
+            'AUDUSD': 10,
+            'NZDUSD': 10,
+            'USDJPY': 9.09, // ~$9.09 per pip (1 pip = 0.01 JPY, lot=100000, /110)
+            'USDCHF': 10,
+            'USDCAD': 7.69,
+            'XAUUSD': 10,   // $10 per pip (0.01 move) per std lot (100 oz)
+            'BTCUSD': 1     // variable, simplified to $1/pip
+        };
+
+        // Track whether Risk input is in % or money mode
+        let psRiskMode = 'percent'; // 'percent' | 'money'
+
+        function togglePsRiskMode() {
+            const balance    = parseFloat(document.getElementById('ps-balance').value) || 10000;
+            const riskInput  = document.getElementById('ps-risk');
+            const riskLabel  = document.getElementById('ps-risk-label');
+            const swapBtn    = document.getElementById('ps-swap-btn');
+            const currentVal = parseFloat(riskInput.value) || 0;
+            const currency   = document.getElementById('ps-acct-currency').value;
+            const currSymbol = { USD:'$', EUR:'€', GBP:'£', THB:'฿' }[currency] || '$';
+
+            if (psRiskMode === 'percent') {
+                // Switch to money mode: convert % → amount
+                psRiskMode = 'money';
+                const moneyVal = (currentVal / 100) * balance;
+                riskInput.value       = moneyVal.toFixed(2);
+                riskInput.step        = '1';
+                riskInput.placeholder = '100';
+                riskLabel.textContent = `Risk Amount (${currSymbol})`;
+                swapBtn.style.background    = 'rgba(16,185,129,0.2)';
+                swapBtn.style.borderColor   = 'rgba(16,185,129,0.45)';
+                swapBtn.style.color         = '#34d399';
+            } else {
+                // Switch back to % mode: convert amount → %
+                psRiskMode = 'percent';
+                const pctVal = balance > 0 ? ((currentVal / balance) * 100) : 1;
+                riskInput.value       = pctVal.toFixed(2);
+                riskInput.step        = '0.1';
+                riskInput.placeholder = '1';
+                riskLabel.textContent = 'Risk %';
+                swapBtn.style.background  = 'rgba(168,85,247,0.2)';
+                swapBtn.style.borderColor = 'rgba(168,85,247,0.45)';
+                swapBtn.style.color       = '#c084fc';
+            }
+        }
+
+        function calcPositionSize() {
+            const balance    = parseFloat(document.getElementById('ps-balance').value) || 0;
+            const riskRaw    = parseFloat(document.getElementById('ps-risk').value) || 0;
+            const slPips     = parseFloat(document.getElementById('ps-sl-pips').value) || 1;
+            const pair       = document.getElementById('ps-pair').value;
+            const currency   = document.getElementById('ps-acct-currency').value;
+            const currSymbol = { USD:'$', EUR:'€', GBP:'£', THB:'฿' }[currency] || '$';
+
+            // Resolve risk amount depending on mode
+            const riskAmount = psRiskMode === 'percent'
+                ? balance * (riskRaw / 100)
+                : riskRaw;
+            const riskPct    = balance > 0 ? (riskAmount / balance * 100) : 0;
+
+            const pipVal       = pipValuePerLot[pair] || 10;
+            const lotSize      = riskAmount / (slPips * pipVal);
+            const suggestedLot = Math.max(Math.floor(lotSize * 100) / 100, 0.01);
+            const actualRisk   = suggestedLot * slPips * pipVal;
+
+            document.getElementById('ps-result').innerHTML =
+                `💰 Risk Amount: <strong>${currSymbol}${riskAmount.toFixed(2)}</strong> (${riskPct.toFixed(2)}% of balance)<br>` +
+                `📦 Lot Size: <strong>${suggestedLot.toFixed(2)} lots</strong><br>` +
+                `📍 Pip Value/Lot: <strong>${currSymbol}${pipVal.toFixed(2)}</strong><br>` +
+                `🛑 SL: <strong>${slPips} pips</strong> | Actual Risk: <strong>${currSymbol}${actualRisk.toFixed(2)}</strong>`;
+        }
+
+        // =============================================
+        // Profit Calculator (myfxbook-style)
+        // =============================================
+        // Contract size per lot for each pair
+        const contractSize = {
+            'EURUSD': 100000, 'GBPUSD': 100000, 'AUDUSD': 100000,
+            'NZDUSD': 100000, 'USDJPY': 100000, 'USDCHF': 100000,
+            'USDCAD': 100000,
+            'XAUUSD': 100,    // 100 troy oz per lot
+            'BTCUSD': 1       // 1 BTC per lot
+        };
+
+        // Whether quote currency is USD (profit already in USD)
+        const quoteIsUSD = {
+            'EURUSD': true, 'GBPUSD': true, 'AUDUSD': true,
+            'NZDUSD': true, 'USDJPY': false, 'USDCHF': false,
+            'USDCAD': false, 'XAUUSD': true, 'BTCUSD': true
+        };
+
+        // Approximate rates to convert to USD (simplified, no live feed)
+        const toUSD = {
+            'USDJPY': 0.0067,  // 1 JPY ≈ $0.0067
+            'USDCHF': 1.11,    // 1 CHF ≈ $1.11
+            'USDCAD': 0.74,    // 1 CAD ≈ $0.74
+        };
+
+        function calcProfit() {
+            const action   = document.getElementById('pc-action').value;
+            const pair     = document.getElementById('pc-pair').value;
+            const openP    = parseFloat(document.getElementById('pc-open').value);
+            const closeP   = parseFloat(document.getElementById('pc-close').value);
+            const lot      = parseFloat(document.getElementById('pc-lot').value) || 0.1;
+            const currency = document.getElementById('pc-acct-currency').value;
+
+            if (isNaN(openP) || isNaN(closeP)) {
+                document.getElementById('pc-result').innerText = 'กรุณากรอก Open และ Close Price ให้ถูกต้อง';
+                return;
+            }
+
+            const cs     = contractSize[pair] || 100000;
+            const diff   = action === 'buy' ? (closeP - openP) : (openP - closeP);
+            let profit   = diff * cs * lot;
+
+            // Convert to USD if quote is not USD
+            if (!quoteIsUSD[pair] && toUSD[pair]) {
+                profit = profit * toUSD[pair];
+            }
+
+            // Convert to account currency (simplified)
+            const fromUSD = { USD: 1, EUR: 0.92, GBP: 0.79, THB: 35 };
+            const finalProfit = profit * (fromUSD[currency] || 1);
+            const currSymbol  = { USD:'$', EUR:'€', GBP:'£', THB:'฿' }[currency] || '$';
+
+            const pips = pair === 'USDJPY'
+                ? Math.abs(diff) * 100
+                : pair === 'XAUUSD'
+                    ? Math.abs(diff) * 100
+                    : Math.abs(diff) * 10000;
+
+            const isWin = finalProfit >= 0;
+            document.getElementById('pc-result').innerHTML =
+                `${isWin ? '✅' : '❌'} P&L: <strong style="color:${isWin ? '#34d399' : '#f87171'}">${finalProfit >= 0 ? '+' : ''}${currSymbol}${finalProfit.toFixed(2)}</strong><br>` +
+                `📍 Pips: <strong>${(action === 'buy' ? closeP - openP : openP - closeP) >= 0 ? '+' : ''}${pips.toFixed(1)} pips</strong><br>` +
+                `📦 Lot: <strong>${lot}</strong> | Action: <strong>${action.toUpperCase()}</strong> ${pair}`;
+        }
+    </script>
+</body>
+
+</html>
