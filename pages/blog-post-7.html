@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เตรียมตัวแพ้ ถ้าไม่มีระบบเทรด - WaitingGod Blog</title>
+    <title>แก่นแท้ของอาชีพเทรดเดอร์ - WaitingGod Blog</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -94,6 +94,7 @@
             border-radius: 24px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            font-family: 'Sarabun', sans-serif;
         }
 
         .post-content h2, .post-content h3 {
@@ -101,6 +102,7 @@
             margin-top: 48px;
             margin-bottom: 24px;
             font-weight: 700;
+            font-family: 'Sarabun', sans-serif;
         }
 
         .post-content h2 {
@@ -166,13 +168,14 @@
         }
 
         .phc-title {
-            font-size: clamp(2.5rem, 4vw, 3.8rem);
+            font-size: clamp(2rem, 3vw, 3rem);
             color: #ffffff;
             font-weight: 800;
-            line-height: 1.15;
+            line-height: 1.25;
             margin: 20px 0;
             position: relative;
             z-index: 2;
+            font-family: 'Sarabun', sans-serif;
         }
 
         .phc-author-text {
@@ -246,20 +249,9 @@
             transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-
         .post-reveal.active {
             opacity: 1;
             transform: translateY(0);
-        }
-
-        .post-content-img {
-            width: 100%;
-            border-radius: 16px;
-            margin: 40px 0;
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            object-fit: contain;
-            background: #000;
         }
 
         /* Related Articles Area */
@@ -358,6 +350,7 @@
             line-height: 1.4;
             margin-bottom: 24px;
             flex: 1;
+            font-family: 'Sarabun', sans-serif;
         }
 
         .blog-card-footer {
@@ -371,7 +364,6 @@
             padding-top: 16px;
             margin-top: auto;
         }
-
     </style>
 </head>
 <body>
@@ -389,41 +381,41 @@
                 <span class="logo-text"><span class="logo-accent">Waiting</span>God</span>
             </a>
             <ul class="nav-links">
-                <li><a href="blog.html" class="nav-active" style="color: var(--primary-neon);">Blog</a></li>
-                <li><a href="wealth-machine.html#performance">ผลงาน</a></li>
-                <li><a href="wealth-machine.html#pricing">แพ็คเกจ</a></li>
+                <li><a href="blog.html" class="nav-active" data-i18n="nav_features" style="color: var(--primary-neon);">Blog</a></li>
+                <li><a href="wealth-machine.html#performance" data-i18n="nav_performance">ผลงาน</a></li>
+                <li><a href="wealth-machine.html#pricing" data-i18n="nav_pricing">แพ็คเกจ</a></li>
                 <li class="nav-dropdown">
                     <button class="nav-dropdown-btn">
-                        <span>Resource</span>
+                        <span data-i18n="nav_resource">Resource</span>
                         <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div class="nav-dropdown-menu mega-menu">
                         <a href="wealth-machine.html" class="nav-dropdown-item">
                             <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg></div>
                             <div class="item-content">
-                                <span class="title">Wealth Machine</span>
-                                <span class="desc">Create financial freedom with EA robot trade.</span>
+                                <span class="title" data-i18n="res_1_title">Wealth Machine</span>
+                                <span class="desc" data-i18n="res_1_desc">Create financial freedom with EA robot trade.</span>
                             </div>
                         </a>
                         <a href="psychology.html" class="nav-dropdown-item">
                             <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></div>
                             <div class="item-content">
-                                <span class="title">Psychology</span>
-                                <span class="desc">All psychology you need to know in trading.</span>
+                                <span class="title" data-i18n="res_2_title">Psychology</span>
+                                <span class="desc" data-i18n="res_2_desc">All psychology you need to know in trading.</span>
                             </div>
                         </a>
                         <a href="tools.html" class="nav-dropdown-item">
                             <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg></div>
                             <div class="item-content">
-                                <span class="title">เครื่องมือ</span>
-                                <span class="desc">เข้าถึงฟีเจอร์เครื่องมือที่หลากหลาย</span>
+                                <span class="title" data-i18n="res_3_title">เครื่องมือ</span>
+                                <span class="desc" data-i18n="res_3_desc">เข้าถึงฟีเจอร์เครื่องมือที่หลากหลาย</span>
                             </div>
                         </a>
                         <a href="../index.html#faq" class="nav-dropdown-item">
                             <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
                             <div class="item-content">
-                                <span class="title">FAQs</span>
-                                <span class="desc">Get answers.</span>
+                                <span class="title" data-i18n="res_4_title">FAQs</span>
+                                <span class="desc" data-i18n="res_4_desc">Get answers.</span>
                             </div>
                         </a>
                     </div>
@@ -433,8 +425,8 @@
                 <div class="lang-dropdown">
                     <div class="lang-menu"></div>
                 </div>
-                <a href="login.html" class="btn btn-login">Log In</a>
-                <a href="wealth-machine.html#pricing" class="btn btn-primary nav-cta">เริ่มใช้งานเลย</a>
+                <a href="login.html" class="btn btn-login" data-i18n="nav_login">Log In</a>
+                <a href="wealth-machine.html#pricing" class="btn btn-primary nav-cta" data-i18n="nav_cta">เริ่มใช้งานเลย</a>
             </div>
             <div class="mobile-menu-btn">
                 <div class="bar"></div>
@@ -449,23 +441,23 @@
         
         <!-- Hero Cover Image -->
         <div class="post-cover-wrap post-reveal" style="max-width: 1000px; border-radius: 12px; overflow: hidden; margin: 0 auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
-            <img src="../assets/blog_cover_system.png" alt="เตรียมตัวแพ้ ถ้าไม่มีระบบเทรด" style="width: 100%; display: block; object-fit: cover;">
+            <img src="../assets/blog_cover_core_trader.png" alt="ไม่มีใครพูดเรื่องนี้" style="width: 100%; display: block; object-fit: cover;">
         </div>
 
         <!-- Post Meta Information (Below Card) -->
         <header style="margin-top: 40px; text-align: left;" class="post-reveal">
             <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px;">
                 <span class="post-pill">WaitingGod</span>
-                <span class="post-pill">TRADING PSYCHOLOGY</span>
+                <span class="post-pill" data-i18n="blog_cat_psychology">TRADING PSYCHOLOGY</span>
             </div>
-            <h2 style="font-size: clamp(2rem, 3vw, 2.5rem); font-weight: 800; color: #fff; margin-bottom: 20px; text-align: left;">เตรียมตัวแพ้ ถ้าไม่มีระบบเทรด</h2>
+            <h2 style="font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; color: #fff; margin-bottom: 20px; text-align: left; font-family: 'Sarabun', sans-serif;">แก่นแท้ของอาชีพเทรดเดอร์</h2>
             
             <div class="post-header-meta">
-                <img src="../assets/about_dog.jpg" alt="Author" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid #2a2a35; object-fit: cover;">
-                <div style="display: flex; flex-direction: row; align-items: center; gap: 12px; flex-wrap: wrap;">
+                <img src="../assets/about_dog.jpg" alt="Author" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid #2a2a35; object-fit: cover; background: #fff;">
+                <div style="display: flex; flex-direction: column; gap: 4px;">
                     <strong style="color: #e2e8f0;">WaitingGod</strong>
-                    <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem;">
-                        <span>April 7, 2026</span> <span style="color: #475569;">•</span> <span>5 min read</span>
+                    <div style="display: flex; gap: 12px; font-size: 0.85rem;">
+                        <span>April 13, 2026</span> • <span>4 min read</span>
                     </div>
                 </div>
             </div>
@@ -474,73 +466,79 @@
 
     <!-- Article Content -->
     <main class="container post-content">
-        <!-- เกริ่นนำ -->
-        <p class="post-reveal">สวัสดีครับ เราได้เดินทางมาถึงบทความที่ 3 แล้ว เนื้อหาในวันนี้ไม่ได้จะพาเพื่อน ๆ มาหาระบบเทรด เนื่องจากระบบเทรดเป็นเรื่องของปัจเจกบุคคล แต่จะพามาดูความสำคัญของการ <strong>"มี" ระบบเทรดของตนเอง</strong> ผมยกให้เรื่องนี้สำคัญเป็นอันดับหนึ่งเลยก็ว่าได้ ถ้าเทรดเดอร์คนใดไม่มีในจุดนี้ หรือหละหลวมในเรื่องนี้แม้แต่นิดเดียว เทรดเดอร์ผู้นั้นจะไม่สามารถเดินไปยังฝั่งฝันได้แน่นอน</p>
+        <h2 class="post-reveal" style="margin-top: 0;">เกริ่นนำ</h2>
+        <p class="post-reveal">เพื่อน ๆ เคยมีความรู้สึกว่าเราขาดอะไรไปไหมครับ ทั้ง ๆ ที่เรียนมาเยอะ รู้เทคนิคมากมาย รู้ว่าจังหวะไหนควรทำ ไม่ควรทำ รู้ว่าอารมณ์มีผลต่อการเทรด แต่ทำไมถึงไม่สำเร็จสักที ผมตามหาคำตอบของคำถามนี้มาร่วม 2 ปี จนผมได้เจอส่วนประกอบที่ผมขาดไปตลอด 5 ปีที่อยู่ในวงการเทรด นั่นคือ <strong>'การฝึกสมาธิ'</strong></p>
         
-        <p class="post-reveal">ระบบเทรดที่ดีไม่ใช่ระบบที่ทำกำไรได้มหาศาล แต่ต้องเป็นระบบที่ง่าย ชัดเจน เพื่อความหลุดพ้นจาก <strong>"ตัวแปรพฤติกรรมขณะเทรด"</strong> ทั้งปวง (ในบทความต่อจากนี้ ผมจะเรียกเจ้าตัวแปรนี้ว่า <strong>ตัวแปร X</strong>)</p>
+        <p class="post-reveal">การฝึกสมาธิทำให้ผมเห็น 'ความไม่รู้' ที่บดบังเส้นทางไปสู่ความสำเร็จ ทำให้ผมเดินย่ำอยู่กับที่มาหลายปี ทุกอาจารย์ ทุกโค้ชจะบอกว่าให้เรามี money management ให้มีระบบเทรดที่ถูกต้อง ให้มีความอดทน มีวินัย รอให้เป็นเย็นให้พอ แต่นั่นก็เป็นเพียงฉากหน้า เบื้องหลังทั้งหมดของมันก็คือ การลงมือปฏิบัติสมาธิ แล้วเห็นความจริงทั้งหมด</p>
 
-        <!-- ตัวแปร X -->
-        <h2 class="post-reveal">ตัวแปร X</h2>
+        <p class="post-reveal">เพื่อน ๆ เคยได้ยินคำนี้ไหมครับ...</p>
         
-        <p class="post-reveal">เทรดเดอร์ทุกคนต้องมีความรู้สึก 'อยาก' อย่างหลีกเลี่ยงไม่ได้ เช่น อยากได้เงินเร็ว ๆ อยากมีออเดอร์ เทรดได้กำไรแล้วอยากได้อีก ไม่อยากเสียจึงเลื่อน SL อยากได้คืน (Revenge Trade) ฯลฯ ซึ่งความรู้สึกเหล่านี้ที่ส่วนใหญ่จะเกิดระหว่างการเทรด <strong>เป็นผลที่มาจากการขาดระบบเทรดที่ชัดเจนทั้งสิ้น</strong></p>
+        <blockquote class="post-reveal">
+            “แค่รู้และเข้าใจ ไม่พอ ต้องลงมือปฏิบัติด้วย”
+        </blockquote>
         
-        <p class="post-reveal">เมื่อเราเทรดโดยขาดแผนการเทรดที่ชัดเจน จะเปรียบเสมือนการขับผ่าไฟแดง ที่คุณอาจจะผ่าไปได้หลายจุด แต่ท้ายที่สุด ถ้าโชคดีหน่อย ตำรวจก็จะลากคอคุณกลับมาจุดเริ่มต้น โชคร้ายก็ประสบอุบัติเหตุจนพาคุณไปต่างโลก</p>
-        
-        <p class="post-reveal">ระบบเทรดเปรียบเสมือนกฎระเบียบที่ไม่ได้มีไว้เพื่อทำกำไรมหาศาล แต่มีไว้เพื่อกำจัด <strong>'จิต'</strong> ที่พาคุณไปทำพฤติกรรมแย่ ๆ ซ้ำ ๆ เทรดเดอร์ที่เข้ามาในตลาดใหม่ ๆ พบปัญหานี้ทั้งสิ้น</p>
-        
-        <p class="post-reveal">ในตอนต้นถือเป็นเรื่องที่ดีเพราะมนุษย์ต้องการความเจ็บปวดสำหรับการพัฒนาตัวเอง ตามสูตรของ Ray Dalio ที่ว่า <em>pain + reflection = progress</em> แต่ไม่ควรจะปล่อยให้เรื่องนี้เรื้อรังจนแก้ยากในตอนท้าย เพราะนิสัยแย่ ๆ มันสะสมได้เช่นเดียวกัน</p>
+        <p class="post-reveal">ในโลกการเทรดเป็นแบบนี้จริง ๆ ครับ</p>
 
-        <!-- Angler Fish -->
-        <h2 class="post-reveal">Angler Fish</h2>
+        <h2 class="post-reveal">จิ๊กซอว์ตัวสุดท้าย</h2>
+        <p class="post-reveal">ผมไม่ได้ทำสมาธิเพราะ ในปลายทางอยากจะหลุดพ้นจากความทุกข์ตามหลักพระพุทธศาสนา ผมเริ่มจากศึกษาถึงกลไกการทำงานของสมอง เกิดอะไรขึ้นในสมองของเราระหว่างการเทรด ซึ่งพบว่าสมองของผมไม่ได้หยุดพักเลย มีแต่เรื่องให้คิด มีแต่เรื่องให้เครียดอยู่ตลอดเวลา ผมรู้สึกเหนื่อย อยากให้สมองได้เงียบลงบ้าง จากนั้นจึงนำไปสู่การหาเทคนิคการลดสาร Cortisol ในสมอง เริ่มต้นตั้งแต่การอยู่กับตัวเอง (Grounding) และพัฒนาไปสู่การทำสมาธิ</p>
         
-        <p class="post-reveal">การปรุงแต่งจิตเกิดขึ้นแทบจะตลอดเวลา ถ้าพูดภาษาที่เข้าใจง่ายก็คือ <strong>เสียงในหัวของเราจะพยายามหลอกล่อเราอยู่เรื่อย ๆ</strong> ผ่านตัวกระตุ้นที่ไม่ว่าจะมาจากการดูกราฟแท่งเทียน หรือประสบการณ์การเทรดของเราเอง(ความจำได้)</p>
-        
-        <p class="post-reveal">มันจะพยายามกระซิบ หลอกล่อเราให้ติดกับ เช่นเดียวกับปลา <strong>Angler Fish</strong> ที่ใช้แสงหลอกล่อปลาตัวอื่น ๆ แต่ในทางกลับกันเมื่อทุกท่านมีระบบเทรด ต่อให้รอบตัวจะมีมรสุมรุนแรงแค่ไหน ท่านก็ยังมีระบบเทรดที่เปรียบเสมือนบ้านหลังหนึ่งที่ปลอดภัยจากตัวแปร X</p>
-        
-        <p class="post-reveal">แต่เรื่องน่าเศร้าก็คือ บ้านหลังที่ท่านอยู่ยังไม่ปลอดภัยจากตัวแปรอื่น ๆ เช่น ตัวแปรความคิด ตัวแปรสิ่งแวดล้อม ตัวแปรกระตุ้นเงียบ ตัวแปรดึกดำบรรพ์ ซึ่งมันคืออะไร แล้วเราจะรับมือกับมันได้อย่างไร ไว้ผมจะมาเขียนในบทความถัด ๆ ไปครับ</p>
+        <p class="post-reveal">เนื่องจากมีงานวิจัยพบว่า สมองส่วนอารมณ์ทำงานน้อยลง สมองส่วนเหตุผลทำงานมากขึ้น สร้างกระแสประสาททำให้เราช้าลง ตอบสนองต่อสิ่งเร้าช้าลง และระหว่างการปฏิบัติต่อเนื่องในทุก ๆ เช้า เย็น ทำให้ผมเห็นว่า ที่ผ่านมาเราหลงอยู่ในโลกของการปรุงแต่งของจิตมาตลอดเลย ณ ตอนนั้น คือผมเห็นอิสรภาพของตัวเองในอนาคต ผมหลุดพ้นแล้ว ผมไม่ต้องการท่าเทรด หรือความรู้อะไรอีกแล้ว ผมมีในสิ่งที่ผมตามหาแล้ว</p>
 
-        <!-- บทสรุป -->
         <h2 class="post-reveal">บทสรุป</h2>
+        <p class="post-reveal">การทำสมาธิ ดูจะเป็นเรื่องที่ห่างเหิน หาจุดเชื่อมโยงได้ยากกับการเทรด แต่ทุกท่านเชื่อผมเถอะว่า ทุกการกระทำ การตัดสินใจ ทุกอารมณ์ เกิดจากภายใน ถ้าทุกท่านปฏิบัติจนชำนาญ จะมองเห็นเหตุปัจจัยที่ทำให้เราแพ้อยู่ตลอด เมื่อท่านเห็นมัน ท่านก็จะหยุดมันได้</p>
         
-        <p class="post-reveal">เทรดเดอร์ทุกคนมีหน้าที่ต่อสู้กับความคิด อารมณ์ของตนเอง <strong>โดยการรับรู้ ไม่ใช่การทำตาม</strong> การมีระบบเทรดที่ชัดเจน จะช่วยไม่ให้เราหลงทาง จากการหลอกล่อของ <strong>ตัวแปร X</strong> ทุก ๆ ตัว (กิเลสขั้นต้น)</p>
-        
-        <p class="post-reveal">หากเทรดเดอร์คนใดสามารถสร้างรากฐานในจุดนี้ให้เข้มแข็งได้ จะสามารถพัฒนาเป็นเทรดเดอร์ที่ไม่แพ้และทำกำไรได้ในระยะยาว</p>
+        <p class="post-reveal">ทุกท่านเชื่อผมเถอะครับว่า เทรดเดอร์ที่สำเร็จ เทรดเดอร์ที่ท่านเคารพนับถือ ล้วนมีวิธีดูจิตของในฉบับของตัวเอง ล้วนพูดถึงธรรมมะ การเข้าใจตนเองทั้งสิ้น ท่านไม่คิดหรอครับว่า นี่เป็น Key สำคัญในการไปสู่ความฝันของท่าน สุดท้ายนี้ขอให้เพื่อน ๆ ลงมือปฏิบัติ ไม่ใช่เพียงแค่เรียนรู้ เจอกันบทความถัดไปครับ ขอบคุณครับ</p>
     </main>
 
     <!-- Related Articles -->
     <section class="related-section">
         <div class="container">
             <div class="related-header post-reveal">
-                <h3 class="related-title">บทความที่เกี่ยวข้อง</h3>
+                <h3 class="related-title">Related articles</h3>
                 <a href="blog.html" class="btn btn-outline" style="border: 1px solid rgba(255,255,255,0.2); color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 50px;">Explore more articles →</a>
             </div>
             
             <div class="blog-grid">
-                <!-- Card 3 -->
-                <a href="blog-post-3.html" class="blog-card post-reveal">
+                <!-- Card 1 -->
+                <a href="blog-post-6.html" class="blog-card post-reveal">
                     <div class="blog-card-img-wrap">
-                        <img src="../assets/blog_cover_habit.png" alt="รู้เท่าทันอารมณ์">
+                        <img src="../assets/blog_cover_inner_voice.png" alt="สงครามภายในที่เทรดเดอร์ต้องเจอ">
                     </div>
                     <div class="blog-card-content">
-                        <span class="blog-badge">TRADING PSYCHOLOGY</span>
-                        <h2 class="blog-card-title">รู้เท่าทันอารมณ์: กุญแจสำคัญสู่ความสำเร็จที่ยั่งยืน</h2>
+                        <span class="blog-badge" data-i18n="blog_cat_psychology">TRADING PSYCHOLOGY</span>
+                        <h2 class="blog-card-title">สงครามภายในที่เทรดเดอร์ต้องเจอ</h2>
                         <div class="blog-card-footer">
-                            <span>April 2, 2026</span>
-                            <span>6 min read</span>
+                            <span>April 13, 2026</span>
+                            <span>4 min read</span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 2 -->
-                <a href="blog-post-2.html" class="blog-card post-reveal" style="transition-delay: 100ms;">
+                <a href="blog-post-5.html" class="blog-card post-reveal" style="transition-delay: 100ms;">
                     <div class="blog-card-img-wrap">
-                        <img src="../assets/blog_cover_5percent.png" alt="Trader 5%">
+                        <img src="../assets/blog_cover_variable_x.png" alt="รู้จักตัวแปร X">
                     </div>
                     <div class="blog-card-content">
-                        <span class="blog-badge">TRADING PSYCHOLOGY</span>
-                        <h2 class="blog-card-title">TRADER แค่ 5% รู้จักสิ่งนี้: ศัตรูที่คร่าชีวิตเทรดเดอร์</h2>
+                        <span class="blog-badge" data-i18n="blog_cat_psychology">TRADING PSYCHOLOGY</span>
+                        <h2 class="blog-card-title">รู้จักตัวแปร X ต้นตอพฤติกรรมแย่ ๆ ของเทรดเดอร์</h2>
                         <div class="blog-card-footer">
-                            <span>March 31, 2026</span>
+                            <span>April 10, 2026</span>
+                            <span>5 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="blog-post-4.html" class="blog-card post-reveal" style="transition-delay: 200ms;">
+                    <div class="blog-card-img-wrap">
+                        <img src="../assets/blog_cover_system.png" alt="เตรียมตัวแพ้ ถ้าไม่มีระบบเทรด">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-badge" data-i18n="blog_cat_psychology">TRADING PSYCHOLOGY</span>
+                        <h2 class="blog-card-title">เตรียมตัวแพ้ ถ้าไม่มีระบบเทรด</h2>
+                        <div class="blog-card-footer">
+                            <span>April 7, 2026</span>
                             <span>5 min read</span>
                         </div>
                     </div>
@@ -554,7 +552,7 @@
         <div class="container footer-content-new">
             <div class="footer-col brand-col">
                 <h3 class="footer-title-lg" style="margin-bottom:0.5rem;"><span class="logo-accent" style="color:var(--primary-neon);">Waiting</span><br>God</h3>
-                <p class="footer-desc-new">ก้าวสู่อนาคตของการเทรดอัตโนมัติด้วย AI ที่ออกแบบมาเพื่อชัยชนะของทุกคน พร้อมรับข่าวสารและข้อเสนอพิเศษ</p>
+                <p class="footer-desc-new" data-i18n="footer_desc_new">ก้าวสู่อนาคตของการเทรดอัตโนมัติด้วย AI ที่ออกแบบมาเพื่อชัยชนะของทุกคน พร้อมรับข่าวสารและข้อเสนอพิเศษ</p>
                 <div class="footer-subscribe-box">
                     <input type="email" placeholder="Enter your email" aria-label="Enter your email">
                     <button class="btn-subscribe-icon" aria-label="Subscribe">
@@ -564,7 +562,7 @@
             </div>
             
             <div class="footer-col links-col">
-                <h4 class="footer-title">เมนู</h4>
+                <h4 class="footer-title" data-i18n="footer_menu_title">เมนู</h4>
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="blog.html">Blog</a></li>
@@ -575,15 +573,15 @@
             </div>
             
             <div class="footer-col contact-col">
-                <h4 class="footer-title">Support</h4>
+                <h4 class="footer-title" data-i18n="footer_support_title">Support</h4>
                 <ul>
-                    <li><a href="../index.html#faq">คำถามที่พบบ่อย (FAQ)</a></li>
-                    <li><a href="#">ติดต่อเรา</a></li>
+                    <li><a href="../index.html#faq" data-i18n="footer_menu_4">คำถามที่พบบ่อย (FAQ)</a></li>
+                    <li><a href="#" data-i18n="footer_contact">ติดต่อเรา</a></li>
                 </ul>
             </div>
             
             <div class="footer-col social-col">
-                <h4 class="footer-title">Follow Us</h4>
+                <h4 class="footer-title" data-i18n="footer_follow_us">Follow Us</h4>
                 <div class="social-links">
                     <a href="#" class="social-icon" aria-label="Facebook"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3.81l.39-4h-4.2V7a1 1 0 011-1h3z"></path></svg></a>
                     <a href="#" class="social-icon" aria-label="Twitter"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg></a>
@@ -593,7 +591,7 @@
         </div>
         <div class="container">
             <div class="footer-bottom-new">
-                <p>&copy; 2026 WaitingGod Intelligence. All rights reserved.</p>
+                <p data-i18n="copyright">&copy; 2026 WaitingGod Intelligence. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -617,6 +615,8 @@
             reveals.forEach(el => observer.observe(el));
         });
     </script>
-    <script src="../js/script.js?v=2.0"></script>
+    <script src="../js/i18n.js?v=1.4"></script>
+    <script src="../js/script.js?v=1.2"></script>
 </body>
 </html>
+
