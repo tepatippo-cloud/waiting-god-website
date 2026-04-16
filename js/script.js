@@ -1,26 +1,91 @@
+class TypeWriterElement extends HTMLElement {
+    connectedCallback() {
+        if (this.initialized) return;
+        this.initialized = true;
+
+        const wordsAttr = this.getAttribute('words') || "Trader ";
+        this.words = wordsAttr.split(',').map(w => w.trim());
+        this.speed = parseInt(this.getAttribute('speed')) || 80;
+        this.delayBetweenWords = parseInt(this.getAttribute('delay')) || 2000;
+        this.cursorChar = this.getAttribute('cursor') || "|";
+        
+        this.wordIndex = 0;
+        this.charIndex = 0;
+        this.isDeleting = false;
+        this.displayText = "";
+
+        this.innerHTML = `<span class="tw-text"></span><span class="tw-cursor" style="margin-left: 2px; transition: opacity 0.1s;">${this.cursorChar}</span>`;
+        this.textSpan = this.querySelector('.tw-text');
+        this.cursorSpan = this.querySelector('.tw-cursor');
+
+        setInterval(() => {
+            if (this.cursorSpan) {
+                this.cursorSpan.style.opacity = this.cursorSpan.style.opacity === '0' ? '1' : '0';
+            }
+        }, 500);
+
+        this.type();
+    }
+
+    type() {
+        if (!this.isConnected) return; // Stop if removed from DOM
+        const currentWord = this.words[this.wordIndex];
+
+        if (!this.isDeleting) {
+            if (this.charIndex < currentWord.length) {
+                this.displayText = currentWord.substring(0, this.charIndex + 1);
+                this.charIndex++;
+                setTimeout(() => this.type(), this.speed);
+            } else {
+                setTimeout(() => {
+                    this.isDeleting = true;
+                    this.type();
+                }, this.delayBetweenWords);
+            }
+        } else {
+            if (this.charIndex > 0) {
+                this.displayText = currentWord.substring(0, this.charIndex - 1);
+                this.charIndex--;
+                setTimeout(() => this.type(), this.speed / 2);
+            } else {
+                this.isDeleting = false;
+                this.wordIndex = (this.wordIndex + 1) % this.words.length;
+                setTimeout(() => this.type(), this.speed);
+            }
+        }
+
+        if (this.textSpan) {
+            this.textSpan.textContent = this.displayText;
+        }
+    }
+}
+customElements.define('type-writer', TypeWriterElement);
+
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
 
-    if (mobileBtn) {
+    if (mobileBtn && navLinks) {
         mobileBtn.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '100%';
-            navLinks.style.left = '0';
-            navLinks.style.width = '100%';
-            navLinks.style.background = 'rgba(11, 15, 25, 0.95)';
-            navLinks.style.padding = '2rem';
-            navLinks.style.backdropFilter = 'blur(10px)';
+            navLinks.classList.toggle('mobile-active');
+            
+            // Toggle hamburger animation if needed
+            mobileBtn.classList.toggle('open');
+        });
+        
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('mobile-active');
+            });
         });
     }
 
     // Scroll Animation (Reveal Elements)
     function reveal() {
         // Excluded .section-header so it doesn't animate
-        var reveals = document.querySelectorAll('.feature-card, .pricing-card, .performance-content, .blog-card');
+        var reveals = document.querySelectorAll('.feature-card, .pricing-card, .performance-content, .blog-card, .hero-content');
 
         for (var i = 0; i < reveals.length; i++) {
             var windowHeight = window.innerHeight;
@@ -45,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Add classes for initial states
-    var toReveal = document.querySelectorAll('.feature-card, .pricing-card, .performance-content, .blog-card');
+    var toReveal = document.querySelectorAll('.feature-card, .pricing-card, .performance-content, .blog-card, .hero-content');
     toReveal.forEach(el => el.classList.add('reveal'));
 
     window.addEventListener('scroll', reveal);
@@ -56,29 +121,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Setup navbar background on scroll
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
+        if (!navbar) return;
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(11, 15, 25, 0.95)';
             navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.5)';
         } else {
-            navbar.style.background = 'rgba(11, 15, 25, 0.8)';
             navbar.style.boxShadow = 'none';
         }
     });
 
-    // Pricing Toggle Interactive
-    const pricingToggles = document.querySelectorAll('.pricing-toggle span');
 
-    pricingToggles.forEach(toggle => {
-        toggle.addEventListener('click', function () {
-            pricingToggles.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-
-            // In a real app we would update the prices dynamically here
-            // e.g:
-            // const isAnnual = this.innerText.includes('ตลอดชีพ');
-            // updatePrices(isAnnual);
-        });
-    });
 
     // Chart Animation - Neon Purple Price Chart
     const canvas = document.getElementById('heroChart');

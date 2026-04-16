@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ทำสิ่งนี้ให้เป็นนิสัย - WaitingGod Blog</title>
+    <title>แด่เทรดเดอร์ที่ทำตามระบบไม่เคยได้</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css?v=1.3">
     <style>
         /* ===== POST SPECIFIC STYLES ===== */
@@ -68,8 +71,8 @@
             overflow: hidden;
             position: relative;
             z-index: 2;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             aspect-ratio: 16 / 9;
         }
 
@@ -87,25 +90,29 @@
             z-index: 2;
             font-size: 1.35rem;
             line-height: 1.9;
-            color: #d1d5db; /* Lighter text for good reading */
+            color: #d1d5db;
+            /* Lighter text for good reading */
             background: rgba(10, 15, 30, 0.85);
             backdrop-filter: blur(12px);
             padding: 40px 48px;
             border-radius: 24px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            font-family: 'Sarabun', sans-serif;
         }
 
-        .post-content h2, .post-content h3 {
+        .post-content h2,
+        .post-content h3 {
             color: #ffffff;
             margin-top: 48px;
             margin-bottom: 24px;
             font-weight: 700;
+            font-family: 'Sarabun', sans-serif;
         }
 
         .post-content h2 {
             font-size: 2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 12px;
         }
 
@@ -160,19 +167,23 @@
         .phc-left::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.15), transparent 70%);
             pointer-events: none;
         }
 
         .phc-title {
-            font-size: clamp(2.5rem, 4vw, 3.8rem);
+            font-size: clamp(2rem, 3vw, 3rem);
             color: #ffffff;
             font-weight: 800;
-            line-height: 1.15;
+            line-height: 1.25;
             margin: 20px 0;
             position: relative;
             z-index: 2;
+            font-family: 'Sarabun', sans-serif;
         }
 
         .phc-author-text {
@@ -200,19 +211,19 @@
             align-items: center;
             justify-content: center;
             padding: 6px 18px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 500;
             color: #d1d5db;
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
             white-space: nowrap;
         }
 
         .post-header-meta {
             margin-top: 40px;
             padding-top: 24px;
-            border-top: 1px solid rgba(255,255,255,0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             align-items: center;
             gap: 16px;
@@ -225,15 +236,18 @@
                 flex-direction: column-reverse;
                 min-height: auto;
             }
+
             .phc-right {
                 flex: none;
                 height: 350px;
             }
+
             .phc-left {
                 padding: 40px 30px;
                 text-align: center;
                 align-items: center;
             }
+
             .phc-title {
                 text-align: center;
             }
@@ -246,26 +260,15 @@
             transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-
         .post-reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .post-content-img {
-            width: 100%;
-            border-radius: 16px;
-            margin: 40px 0;
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            object-fit: contain;
-            background: #000;
-        }
-
         /* Related Articles Area */
         .related-section {
             padding: 80px 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
             z-index: 2;
         }
@@ -311,7 +314,8 @@
         .blog-card-img-wrap {
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio */
             background: #1a2235;
             overflow: hidden;
         }
@@ -358,6 +362,7 @@
             line-height: 1.4;
             margin-bottom: 24px;
             flex: 1;
+            font-family: 'Sarabun', sans-serif;
         }
 
         .blog-card-footer {
@@ -371,9 +376,9 @@
             padding-top: 16px;
             margin-top: auto;
         }
-
     </style>
 </head>
+
 <body>
     <!-- Background System -->
     <div class="bg-layer">
@@ -480,10 +485,12 @@
 
     <!-- Post Hero Section -->
     <div class="container" style="padding-top: 140px; margin-bottom: 60px; position: relative; z-index: 2;">
-        
+
         <!-- Hero Cover Image -->
-        <div class="post-cover-wrap post-reveal" style="max-width: 1000px; border-radius: 12px; overflow: hidden; margin: 0 auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
-            <img src="../assets/blog_cover_habit.png" alt="ทำสิ่งนี้ให้เป็นนิสัย" style="width: 100%; display: block; object-fit: cover;">
+        <div class="post-cover-wrap post-reveal"
+            style="max-width: 1000px; border-radius: 12px; overflow: hidden; margin: 0 auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+            <img src="../assets/blog_cover_follow_plan.png" alt="แด่เทรดเดอร์ที่ทำตามระบบไม่เคยได้"
+                style="width: 100%; display: block; object-fit: cover;">
         </div>
 
         <!-- Post Meta Information (Below Card) -->
@@ -492,14 +499,17 @@
                 <span class="post-pill">WaitingGod</span>
                 <span class="post-pill" data-i18n="blog_cat_psychology">🧠จิตวิทยาการเทรด</span>
             </div>
-            <h2 style="font-size: clamp(2rem, 3vw, 2.5rem); font-weight: 800; color: #fff; margin-bottom: 20px; text-align: left;">รู้เท่าทันอารมณ์: กุญแจสำคัญสู่ความสำเร็จที่ยั่งยืน</h2>
-            
+            <h2
+                style="font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; color: #fff; margin-bottom: 20px; text-align: left; font-family: 'Sarabun', sans-serif;">
+                แด่เทรดเดอร์ที่ทำตามระบบไม่เคยได้</h2>
+
             <div class="post-header-meta">
-                <img src="../assets/about_dog.jpg" alt="Author" style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid #2a2a35; object-fit: cover;">
-                <div style="display: flex; flex-direction: row; align-items: center; gap: 12px; flex-wrap: wrap;">
+                <img src="../assets/about_dog.jpg" alt="Author"
+                    style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid #2a2a35; object-fit: cover; background: #fff;">
+                <div style="display: flex; flex-direction: column; gap: 4px;">
                     <strong style="color: #e2e8f0;">WaitingGod</strong>
-                    <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem;">
-                        <span>April 2, 2026</span> <span style="color: #475569;">•</span> <span>6 min read</span>
+                    <div style="display: flex; gap: 12px; font-size: 0.85rem;">
+                        <span>April 15, 2026</span> • <span>5 min read</span>
                     </div>
                 </div>
             </div>
@@ -508,88 +518,90 @@
 
     <!-- Article Content -->
     <main class="container post-content">
-        <!-- เกริ่นนำ -->
-        <p class="post-reveal">ก่อนอื่น ผมขอแสดงความยินดีด้วยนะครับที่ท่านมีระบบเทรดเป็นของตัวเองแล้ว เพียงแค่นี้ท่านก็หลุดออกมาจากวงจรอุบาทว์ขั้นต้นแล้ว ทุกคนรู้ไหมครับว่ามีเทรดเดอร์หลายคน ที่ใช้เวลาตามหาระบบเทรดหลายปี บางคนใช้เวลาเดินย่ำอยู่ที่เดิมมากกว่า 8 ปี แต่ก็ยังแพ้ เพราะเขาคิดว่าสิ่งที่เขารู้มันไม่เพียงพอที่จะชนะตลาดได้</p>
-        
-        <p class="post-reveal">แต่ปัญหาไม่ได้อยู่ที่ระบบ <strong>มันอยู่ที่ผู้ใช้ระบบ</strong> ที่ยังไม่มีความรู้ความเข้าใจและการปฏิบัติที่มากพอในเรื่องต่อไปนี้</p>
+        <h2 class="post-reveal" style="margin-top: 0;">เกริ่นนำ</h2>
+        <p class="post-reveal">…..เพื่อน ๆ เคยพบปัญหารู้ทั้งรู้แต่ทำไม่ได้ไหมครับ? ปัญหานี้เป็นสิ่งที่เทรดเดอร์ทุก ๆ คนจะต้องพบเจอ ผมติดลูปนี้มาตลอดช่วงเวลาที่เป็นเทรดเดอร์ รู้ทั้งรู้ว่าต้องทำตามแผน แต่ก็แพ้ให้กับกิเลสตัณหาของตนเอง.</p>
+        <p class="post-reveal">พอหาแนวทางการแก้ไข ก็เจอแต่ประโยคที่ว่า ‘ต้องมีวินัยเอย’ ‘รอให้เป็นเอย’ ‘ทำ Trading Journalเอย’ ‘เทรดให้เหมือนทำธุรกิจเอย’ แต่คำแนะนำเหล่านั้นต่างเป็น outcome ที่ไม่ได้เป็น process จริง ๆ ผลลัพธ์ก็คือ มันไม่ได้ช่วยให้ผมเทรดดีขึ้นเลย….</p>
+        <p class="post-reveal">แต่ในบทความนี้ไม่ใช่อย่างนั้นครับ ผมมีแนวทางปฏิบัติที่จะช่วยให้เพื่อน ๆ เทรดเดอร์ทำในสิ่งที่ควรทำและไม่ทำในสิ่งที่ไม่ควรทำ หรือก็คือ เพื่อน ๆ สามารถทำตามระบบได้อย่างแท้จริง  เป็นแนวทางปฏิบัติที่ไม่ใช่คำพูดสวยหรู แต่คือกระบวนการที่สามารถนำไปฝึกได้จริงในชีวิตประจำวัน ผมรับประกันได้เลยว่าการเทรดของเพื่อน ๆ จะดีขึ้นอย่างไม่น่าเชื่อเลยล่ะครับ</p>
 
-        <!-- ความเร็วของจิต -->
-        <h2 class="post-reveal">ความเร็วของจิต</h2>
+        <h2 class="post-reveal">สร้างช่องว่างการโต้ตอบ</h2>
+        <p class="post-reveal">…..ก่อนอื่นผมอยากให้ทุกท่านอ่านความจริง 2 ข้อด้านล่างครับ</p>
         
-        <p class="post-reveal">เทรดเดอร์ทุกคนมีความรู้สึกโลภ ความรู้สึกโกรธ ผ่านการเทรดของเรา และความรู้สึกดังกล่าวนำพาเราไปสู่หายนะ อะไรคือสิ่งที่ผมอยากจะสื่อ?? ผมอยากบอกว่าทุกครั้งที่ผลลัพธ์ออกมาแย่ ออกมาไม่ดี <strong>มันไม่ใช่ความล้มเหลวของคุณครับ</strong> มันเป็นเพราะว่าคุณอาจจะยังไม่รู้ว่า อารมณ์ดังกล่าว มันเกิดขึ้นตามธรรมชาติ และมันสามารถหายไปเองได้!!</p>
+        <p class="post-reveal">1. สมองส่วนอารมณ์ (Limbic System) วิวัฒนาการขึ้นเมื่อประมาณ 250-300 ล้านปีก่อน…..สมองส่วนตรรกกะ (Prefrontal Cortex) วิวัฒนาการอย่างก้าวกระโดดเมื่อ 2-3 ล้านปีก่อน</p>
+        <p class="post-reveal">2. สมองส่วนอารมณ์ใช้เวลาประมวลผลประมาณ 12-50 มิลลิวินาที…..สมองส่วนตรรกะใช้เวลาประมวลผลประมาณ 250-500 สมองส่วนอารมณ์เร็วกว่าราว 10-20 เท่า</p>
         
-        <p class="post-reveal">สิ่งที่แยกเทรดเดอร์ที่ยังแพ้และเทรดเดอร์ที่ประสบความสำเร็จออกจากกันก็คือ ความสามารถในการรับรู้อารมณ์ดังกล่าว ผมอยากให้ทุกท่านดูแผนภาพด้านล่างครับ</p>
+        <p class="post-reveal">สมองส่วนอารมณ์ที่อยู่คู่กับมนุษย์มานานกว่า อีกทั้งยังตอบสนองเร็วกว่า เพื่อน ๆ คิดว่าใครจะชนะในเกมการเทรดครับ อารมณ์ของคุณ? หรือ แผนของคุณ?</p>
+        
+        <p class="post-reveal">วิธีที่เอาชนะเกมการเทรดเลยก็คือ ทำอย่างไรก็ได้ให้สมองส่วนตรรกะกลับเข้ามามีบทบาทได้เร็วที่สุด วิธีนั้นก็คือ <strong>‘การฝึกสมาธิ’</strong> ครับ</p>
+        
+        <p class="post-reveal">เราฝึกสมาธิไปเพื่ออะไร? ถ้าคุณอยากสำเร็จในการเทรด คุณต้องทำครับ หลีกเลี่ยงไม่ได้ การฝึกสมาธิจะช่วงสร้าง ‘ช่องว่าง’ ระหว่างการรับรู้และการตอบสนองขึ้นมา หากปฏิบัติซ้ำ ๆ ช่องว่างของคุณจะกว้างขึ้น กล่าวคือ อารมณ์จะไม่มีบทบาทในการควบคุมอำนาจการตัดสินใจของคุณอีกต่อไป</p>
+        
+        <p class="post-reveal">สิ่งนี้สำคัญกว่าระบบเทรดชั้นยอด เป็นอาวุธ Tier SS+ ที่เมื่อคุณได้มันมาคุณจะเป็นอิสระในทุก ๆ เรื่อง ไม่ว่าจะเป็น Field ของ Investment ด้วยก็ตาม</p>
 
-        <!-- รูปภาพที่ 2 -->
-        <img src="../assets/blog_diagram_elite.png" alt="กลไกของอารมณ์" class="post-content-img post-reveal" style="background:#1a1c23; border: none; padding: 20px;">
+        <h2 class="post-reveal">เริ่มฝึกอย่างไรดี?</h2>
+        <p class="post-reveal">…..ยิ่งเรารู้ตัวบ่อย ๆ แค่ไหน ช่องว่างการตอบสนองก็ยิ่งกว้างขึ้นเท่านั้น ที่ฝึกวิชาชั้นดีเลยก็คือ ในชีวิตประจำวันครับ ตั้งแต่ตื่นนอนจนเข้านอน ตัวอย่างเช่น ระหว่างแปรงฟัน ให้เพื่อน ๆ รู้ตัวครับว่า “ร่างกายนี้กำลังแปรงฟันอยู่ มือกำลังจับแปรงขยับขึ้นลงซ้ายชวา” ให้เพื่อน ๆ รู้ตัวไปเรื่อย ๆ ครับ รู้ว่าร่างกายกำลังทำ action อะไรอยู่ ยืน เดิน นั่ง นอน (โดยไม่ไปบังคับให้รู้ตัวตลอดเวลา)</p>
+        
+        <p class="post-reveal">ผมไม่แนะนำให้เพื่อน ๆ รู้ตัวระหว่างการเทรดนะครับ เพราะช่องว่างยังแคบอยู่ อีกทั้งยังโดนรบกวนโดยสิ่งกระตุ้น(กราฟ)ที่มากเกินไป กล่าวคือ ให้อารมณ์เหมือนเทรดเดอร์มือใหม่ที่เข้ามาในตลาดด้วยทุนมหาศาล แน่นอนว่าหมดตัวแน่นอน ผมแนะนำให้เริ่มจากอะไรง่าย ๆ ก่อน เช่น ตอนนี้คุณกำลังยืน/นั่งอ่านบทความผมอยู่</p>
+        
+        <p class="post-reveal">การฝึกสมาธิจะนำไปสู่การเกิดจิตผู้รู้ (Knowing mind) ยิ่งเพื่อน ๆ รู้ตัวบ่อยขึ้น จิตผู้รู้มันจะเกิดขึ้นอัตโนมัติ ทีนี้เพื่อน ๆ จะเริ่มเห็นอารมณ์ที่เกิดขึ้นในระหว่างวัน คราวนี้ล่ะ เพื่อน ๆ จะเริ่มเห็นแสงสว่างที่ว่า “คุณเป็นคนคุมเกมนี้แล้ว” ในบทความหน้าผมจะมาขยายความเรื่อง Knowing mind นะครับ รอติดตามได้เลย</p>
 
-        <p class="post-reveal">คนที่มีระบบเทรดที่มีความได้เปรียบ (Edge) แต่ก็ยังแพ้อยู่ นั่นเป็นเพราะว่าคนคุมเกมทั้งหมด คือ <strong>"อารมณ์"</strong> ในทางกลับกัน คนที่สามารถสร้างช่องว่างระหว่างอารมณ์กับการลงมือทำผ่านการรู้อารมณ์ของตนเอง (Knowing mind) จะสามารถหลีกเลี่ยงการกระทำที่ไม่พึงประสงค์ออกไปได้</p>
-        
-        <p class="post-reveal">อาจจะมีบางท่านที่สงสัยว่า <em>"เราไม่เห็นจะต้องโลภจะต้องโกรธเลย มีระบบก็ทำตามระบบแค่นั้น"</em> แต่ในเมื่อเรายังเป็นสิ่งมีชีวิตที่เรียกว่ามนุษย์ ผนวกกับสิ่งแวดล้อมการเทรดที่เต็มไปด้วยสิ่งกระตุ้น ทั้งกราฟราคา สื่อโซเชียลมีเดีย ฯลฯ เราไม่สามารถห้ามตัวเราไม่ให้เกิดความรู้สึกดังกล่าวได้ มันเป็นไปไม่ได้</p>
-        
-        <p class="post-reveal">ซึ่งแผนภาพตัวอย่างเป็นเพียงตัวอย่างคร่าว ๆ ที่คอยแสดงถึงกลไกการลงมือทำในสิ่งที่เราไม่พึงประสงค์ แต่ในความเป็นจริง มนุษย์ไม่ได้มีแค่ 2 ความรู้สึก ไม่ได้มีแค่โลภหรือโกรธ แต่ยังมีความกลัว ความเบื่อ ความรู้สึกไม่พอใจ จากทั้งการเทรดและจากสังคมแวดล้อม ความไม่มั่นใจในระบบเทรด ความคิดปรุงแต่ง สิ่งเหล่านี้ล้วนเป็นปัจจัยที่ทำให้เราแพ้ทั้งสิ้น</p>
-
-        <blockquote class="post-reveal">
-            หน้าที่ของเทรดเดอร์ที่ประสบความสำเร็จ มีความจำเป็นจะต้องทำความรู้จักในทุกสภาพอารมณ์อย่างหลีกเลี่ยงไม่ได้
-        </blockquote>
-
-        <!-- เมื่อเราเห็น เขาจะหายไป -->
-        <h2 class="post-reveal">เมื่อเราเห็น เขาจะหายไป</h2>
-        
-        <p class="post-reveal">พฤติกรรมของจิตของเรามีความคล้ายกับโลกทางควอนตัมฟิสิกส์อย่างไม่น่าเชื่อ เมื่อเราพยายามจะที่จะวัดค่าหรือไปมองมัน มันจะทำพฤติกรรมที่เปลี่ยนไปไม่เหมือนกับตอนที่เราไม่ไปวัดมัน เช่นเดียวกับจิตที่หากเราสังเกตเห็น มันจะดิ้น สั่นคลอนและแปรสภาพไปไม่มากก็น้อย</p>
-        
-        <p class="post-reveal">ผมไม่ได้บอกว่าแค่การรู้จิตซื่อ ๆ จะสามารถกำจัดความรู้สึกด้านลบของเทรดเดอร์ได้ คุณปลูกเมล็ดพันธุ์แห่งนิสัยมานานนับหลายเดือนหรือหลายปี <strong>การรู้ซื่อ ๆ เพียงครั้งเดียว ไม่สามารถทำลายอำนาจการควบคุมของจิตได้ แต่มันมากพอที่จะเจาะรูรั่วให้เมล็ดพันธุ์แห่งนิสัยนั้น</strong></p>
-        
-        <p class="post-reveal">ผมอยากให้ทุกท่านเริ่มสังเกตตนเองดูว่า เรามักจะทำนิสัยแย่ ๆ ตอนไหน และในขณะนั้นร่างกายหรืออารมณ์ของเรามักจะมีรูปแบบอย่างไร เช่น ใจเต้นแรง หน้าท้องเกร็ง ใบหน้าเกร็ง ไม่มีสติ เป็นต้น อยากให้ทุกท่านหมั่นเฝ้าสังเกตไปเรื่อย ๆ</p>
-        
-        <p class="post-reveal">เมื่อท่านเฝ้าสังเกตไปถึงจุดนึง ท่านจะเห็นความคิดและอารมณ์ที่อยู่ในช่วงตั้งไข่ ก่อนที่มันจะฟักออกมาทำให้เราทำนิสัยแย่ ๆ เดิม ๆ นั้นอีก ความเร็วในการรู้เท่าทันจิตของท่านจะเพิ่มขึ้น ซึ่งช่วยสร้างช่องว่างระหว่างอารมณ์กับการลงมือทำบางสิ่งบางอย่างให้กว้างขึ้น และกว้างยิ่งขึ้นไปอีก ซึ่งมากเพียงพอให้สมองส่วนตรรกะ (Prefrontal Cortex) กระโดดเข้ามาในเกม เพื่อหยุดยั้งอำนาจควบคุมจากสมองส่วนอารมณ์ (Limbic System)</p>
-
-        <!-- บทสรุป -->
         <h2 class="post-reveal">บทสรุป</h2>
+        <p class="post-reveal">…..เทรดเดอร์ที่ประสบความสำเร็จไม่ได้มีแค่วินัยเพียงอย่างเดียว แต่มี "การรู้ตัว" ที่มากพอ ที่จะสร้างช่องว่างให้สมองส่วนตรรกะทำงาน</p>
         
-        <p class="post-reveal">ในส่วนสุดท้ายนี้ผมอยากบอกทุกท่านว่า เทรดเดอร์ไม่สามารถหักห้ามจิต (ในที่นี้คืออารมณ์ ความคิด) ไม่ให้โลภ ไม่ให้โกรธ หรือไม่ให้เกิดอารมณ์ที่เราไม่ปรารถนาได้ แต่เทรดเดอร์ทุก ๆ คนมีหน้าที่มองและรับรู้ถึงการมีอยู่ของสิ่งนั้น</p>
-        
-        <p class="post-reveal">เช่นเดียวกับหลักความจริงในพระพุทธศาสนาที่ว่า <strong>"ทุกข์ให้รู้ ไม่ใช่ให้ละ เดี๋ยวทุกข์นั้นมันก็ดับไป"</strong> มีแต่ตัวเทรดเดอร์เองที่ปล่อยให้จิตนั้นเข้ามามีบทบาทในเกมการเทรดของเรา</p>
-        
-        <p class="post-reveal">แล้วทุกท่านล่ะครับ มีความคิดเห็นเกี่ยวกับประสบการณ์นี้อย่างไร?</p>
-
+        <p class="post-reveal">ผมอยากให้เพื่อน ๆ ลอง "รู้ตัว" ในกิจกรรมเล็ก ๆ อย่างเช่น การแปรงฟัน การล้างจาน หรือการเดินสลับเท้าซ้ายขวาดูสัก 21 วัน แล้วเพื่อน ๆ จะพบว่าเมื่อกลับมาเทรดอีกครั้ง กราฟเดิม ๆ ที่ทำให้ใจดิ้น คุณจะเห็น ‘ใจที่กำลังดิ้น’ เด่นชัดขึ้นมา ไม่ใช่เพราะกราฟเปลี่ยนไป แต่เป็นเพราะ "จิต" ของเพื่อน ๆ เริ่มมีช่องว่างที่มากขึ้น ซึ่งเป็นช่องว่างที่เพียงพอให้เราตัดสินใจได้ถูกต้องไหม ก็ขึ้นอยู่กับการสั่งสมการฝึกฝนรู้ตัวของเพื่อน ๆ เลยครับ แล้วพบกันใหม่ในบทความหน้ากับเรื่อง Knowing Mind ครับ สวัสดีครับ</p>
     </main>
 
     <!-- Related Articles -->
     <section class="related-section">
         <div class="container">
             <div class="related-header post-reveal">
-                <h3 class="related-title">บทความที่เกี่ยวข้อง</h3>
-                <a href="blog.html" class="btn btn-outline" style="border: 1px solid rgba(255,255,255,0.2); color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 50px;">Explore more articles →</a>
+                <h3 class="related-title">Related articles</h3>
+                <a href="blog.html" class="btn btn-outline"
+                    style="border: 1px solid rgba(255,255,255,0.2); color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 50px;">Explore
+                    more articles →</a>
             </div>
-            
+
             <div class="blog-grid">
                 <!-- Card 1 -->
-                <a href="blog-post-2.html" class="blog-card post-reveal">
+                <a href="blog-post-8.html" class="blog-card post-reveal">
                     <div class="blog-card-img-wrap">
-                        <img src="../assets/blog_cover_5percent.png" alt="Trader 5%">
+                        <img src="../assets/blog_cover_variable_y.png" alt="ตัวแปรด้านสภาพแวดล้อม">
                     </div>
                     <div class="blog-card-content">
                         <span class="blog-badge" data-i18n="blog_cat_psychology">🧠จิตวิทยาการเทรด</span>
-                        <h2 class="blog-card-title">TRADER แค่ 5% รู้จักสิ่งนี้: ศัตรูที่คร่าชีวิตเทรดเดอร์</h2>
+                        <h2 class="blog-card-title">ตัวแปรด้านสภาพแวดล้อม</h2>
                         <div class="blog-card-footer">
-                            <span>March 31, 2026</span>
-                            <span>5 min read</span>
+                            <span>April 14, 2026</span>
+                            <span>4 min read</span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 2 -->
-                <a href="blog-post-1.html" class="blog-card post-reveal" style="transition-delay: 100ms;">
+                <a href="blog-post-7.html" class="blog-card post-reveal" style="transition-delay: 100ms;">
                     <div class="blog-card-img-wrap">
-                        <img src="../assets/blog_cover_fomo.png" alt="FOMO Cover">
+                        <img src="../assets/blog_cover_core_trader.png" alt="แก่นแท้ของอาชีพเทรดเดอร์">
                     </div>
                     <div class="blog-card-content">
                         <span class="blog-badge" data-i18n="blog_cat_psychology">🧠จิตวิทยาการเทรด</span>
-                        <h2 class="blog-card-title">5 Ways To Beat FOMO</h2>
+                        <h2 class="blog-card-title">แก่นแท้ของอาชีพเทรดเดอร์</h2>
                         <div class="blog-card-footer">
-                            <span>March 9, 2026</span>
-                            <span>7 min read</span>
+                            <span>April 13, 2026</span>
+                            <span>4 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="blog-post-6.html" class="blog-card post-reveal" style="transition-delay: 200ms;">
+                    <div class="blog-card-img-wrap">
+                        <img src="../assets/blog_cover_inner_voice.png" alt="สงครามภายในที่เทรดเดอร์ต้องเจอ">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-badge" data-i18n="blog_cat_psychology">🧠จิตวิทยาการเทรด</span>
+                        <h2 class="blog-card-title">สงครามภายในที่เทรดเดอร์ต้องเจอ</h2>
+                        <div class="blog-card-footer">
+                            <span>April 13, 2026</span>
+                            <span>4 min read</span>
                         </div>
                     </div>
                 </a>
@@ -597,7 +609,7 @@
         </div>
     </section>
 
-        <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container footer-content-new">
             <div class="footer-col brand-col">
@@ -673,7 +685,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const reveals = document.querySelectorAll('.post-reveal');
-            
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -688,7 +700,9 @@
             reveals.forEach(el => observer.observe(el));
         });
     </script>
-    <script src="../js/script.js?v=2.0"></script>
+    <script src="../js/i18n.js?v=1.4"></script>
+    <script src="../js/script.js?v=1.2"></script>
 </body>
+
 </html>
 

@@ -8,7 +8,7 @@ const translations = {
         description: 'ยกระดับการเทรดของคุณด้วย WaitingGod บอทเทรด AI อัจฉริยะที่แม่นยำและปลอดภัย',
 
         // Navbar
-        nav_features: 'BLOG',
+        nav_features: 'บล็อก',
         nav_performance: 'ผลงาน',
         nav_pricing: 'แพ็คเกจ',
         nav_resource: 'เพิ่มเติม',
@@ -87,6 +87,7 @@ const translations = {
 
         // Footer
         footer_desc: 'ก้าวสู่อนาคตของการเทรดอัตโนมัติด้วย AI ที่ออกแบบมาเพื่อชัยชนะของทุกคน',
+        footer_desc_new: 'ผมหวังว่าประสบการณ์ของผม จะช่วยเหลือเพื่อน ๆ เทรดเดอร์ที่หลงทางได้',
         footer_menu_title: 'เมนู',
         footer_menu_1: 'ฟีเจอร์เด่น',
         footer_menu_2: 'ราคา',
@@ -119,22 +120,22 @@ const translations = {
         back_home: 'กลับหน้าหลัก',
 
         // New Main Page Sections
-        about_title: 'Hey! <span class="text-gradient">Trader</span>',
-        about_p1: 'สวัสดีครับ ผมชื่อดีโด้(WaitingGod) เป็นเทรดเดอร์ในตลาด Forex กว่า 8 ปี และได้เกษียณตัวเองในวัย 27 ปี ผมอยากใช้พื้นที่ในส่วนนี้ช่วยเหลือเทรดเดอร์ที่ยังขาดทุนอยู่ ให้ถึงฝันของทุกท่านให้เร็วที่สุดครับ',
+        about_title: 'Hey! <type-writer class="text-gradient" words="Trader, Investor, Winner" speed="80" delay="2500"></type-writer>',
+        about_p1: 'สวัสดีครับ ผม ดีโด้(WaitingGod) เป็นเทรดเดอร์ในตลาด Forex กว่า 8 ปี และได้เกษียณตัวเองในวัย 27 ปี ผมอยากใช้พื้นที่ในส่วนนี้ช่วยเหลือเทรดเดอร์ที่ยังขาดทุนอยู่ ให้ถึงฝันของทุกท่านให้เร็วที่สุดครับ',
         about_p2: 'เพียงแค่คุณเข้าใจว่าปัญหามันมาจากตัวคุณ ในวินาทีนั้นคุณก็ชนะตลาดแล้ว',
         about_p3: 'เป้าหมายของเราคือการส่งผ่านองค์ความรู้นี้ไปสู่นักลงทุนทุกคน เพื่อปิดประตูขาดทุนและสร้างกระแสเงินสดที่ตรวจสอบได้จริง เราไม่ใช่แค่คนขายบอท แต่เราคือเทรดเดอร์ที่ใช้ระบบนี้เทรดเงินจริงๆ ของเราเอง',
-        compare_sub: 'COMPARE',
-        compare_title: 'CHANGE YOUR TRADING.',
-        past_title: 'THAT WAS THE PAST.',
-        past_1: 'คุณต้องนั่งเฝ้ากราฟหน้าจอทั้งวันเพื่อหาจังหวะเข้าเทรด',
-        past_2: 'ใช้อารมณ์ในการตัดสินใจเวลาเกิดความกังวล ทำให้ผิดพลาดซ้ำเดิม',
-        past_3: 'ความกดดันและความเครียดสูงจากการเดาทิศทางตลาดที่ควบคุมไม่ได้',
-        past_4: 'พอร์ตแตกเพราะไม่มีวินัยในการตั้ง Stop Loss อย่างเคร่งครัด',
-        future_title: 'THIS WILL BE THE FUTURE.',
-        future_1: 'ระบบการเทรดอัตโนมัติ 24/7 คุณสามารถใช้ชีวิตได้อย่างอิสระ',
-        future_2: 'กฎเกณฑ์การเข้าเทรดเป็นไปตามสถิติ ไร้ซึ่งอารมณ์เข้ามาเกี่ยวข้อง 100%',
-        future_3: 'เข้าถึงระบบวิเคราะห์ตลาด พิมพ์เขียว และเครื่องมือสำหรับบริหารพอร์ตครบจบ',
-        future_4: 'มีการคำนวณ Stop Loss ล่วงหน้า ปกป้องเงินทุนตั้งแต่เริ่มต้นเทรด',
+        compare_sub: 'เปรียบเทียบ',
+        compare_title: 'เทรดเดอร์ทั่วไป vs เทรดเดอร์มืออาชีพ',
+        past_title: 'เทรดเดอร์ทั่วไป',
+        past_1: 'ไม่มีจิตผู้รู้ หลงอยู่ในโลกของการเทรดตลอดเวลา',
+        past_2: 'ไม่มีระบบเทรดที่ชัดเจน หรือมี แต่เป็นระบบที่ไม่มีความได้เปรียบ เข้า-ออกออเดอร์โดยไร้เหตุผล',
+        past_3: 'นั่งเฝ้าหน้าจอทั้งวัน เปิดมือถือดูกราฟตลอด โดยไม่รู้ตัว',
+        past_4: 'ตามหาท่าเทรด อยากเรียนรู้ทุกศาสตร์ แต่ไม่เคยมองกลับเข้ามาที่ตนเอง',
+        future_title: 'เทรดเดอร์มืออาชีพ',
+        future_1: 'มีจิตผู้รู้ เห็นจิตที่คิดปรุงแต่ง รู้ว่าอารมณ์ไม่ใช่ตัวเรา',
+        future_2: 'มีระบบเทรดที่ชัดเจน มีความได้เปรียบในระยะยาว มีสถิติรองรับในทุกสภาวะตลาด',
+        future_3: 'ไม่เปิดกราฟดูโดยไม่รู้ตัว',
+        future_4: 'หยุดตามใจกิเลส โฟกัสในสิ่งที่ "ต้องทำ" เท่านั้น เพื่อไปสู่เป้าหมายของตนเอง',
         faq_title: 'FAQs',
         faq_q1: 'จำเป็นต้องมีความรู้เฉพาะทางหรือไม่?',
         faq_a1: 'ไม่ต้องเลยครับ ระบบของเราออกแบบมาให้พร้อมใช้งานได้ทันที เพียงเชื่อมต่อและปล่อยให้ระบบทำงานตามกลยุทธ์ที่วางไว้',
@@ -153,7 +154,7 @@ const translations = {
         blog_subtext: 'บทความคุณภาพกว่า 200+ ตอน · สมัครสมาชิกเพื่อรับอัปเดตใหม่ๆ',
         blog_cat_all: 'ทั้งหมด',
         blog_cat_strategy: 'กลยุทธ์การเทรด',
-        blog_cat_psychology: 'จิตวิทยาการเทรด',
+        blog_cat_psychology: '🧠จิตวิทยาการเทรด',
         blog_cat_books: 'หนังสือเทรด',
         blog_cat_tech: 'การวิเคราะห์เชิงเทคนิค',
         blog_cat_quotes: 'คำคมแนวคิด',
@@ -267,6 +268,7 @@ const translations = {
 
         // Footer
         footer_desc: 'Step into the future of automated trading with AI designed for everyone\'s success.',
+        footer_desc_new: 'I hope my experience can help fellow traders who are lost.',
         footer_menu_title: 'Menu',
         footer_menu_1: 'Key Features',
         footer_menu_2: 'Pricing',
@@ -299,7 +301,7 @@ const translations = {
         back_home: 'Back to Home',
 
         // New Main Page Sections
-        about_title: 'ABOUT <span class="text-gradient">WAITINGGOD</span>',
+        about_title: 'Hey <type-writer class="text-gradient" words="TRADER, INVESTOR, WINNER" speed="80" delay="2500"></type-writer>',
         about_p1: 'WaitingGod is a collaboration of Quant Developers and Institutional Traders who believe that "a good system must be emotionless."',
         about_p2: 'The Forex market is fraught with volatility and uncertainty. We developed an AI trained on millions of hours of data to systematically analyze every trade. Decisions are 100% statistically and computationally driven, free of fear and bias.',
         about_p3: 'Our goal is to pass this knowledge on to all investors, close the door on consistent losses, and generate verifiable cash flow. We are not just bot sellers; we use this very system to trade our own money.',
@@ -334,7 +336,7 @@ const translations = {
         blog_subtext: '200+ free articles · Subscribe to get new posts',
         blog_cat_all: 'All',
         blog_cat_strategy: 'Trading Strategies',
-        blog_cat_psychology: 'Trading Psychology',
+        blog_cat_psychology: '🧠Trading Psychology',
         blog_cat_books: 'Trading Books',
         blog_cat_tech: 'Technical Analysis',
         blog_cat_quotes: 'Quotes',
@@ -448,6 +450,7 @@ const translations = {
 
         // Footer
         footer_desc: 'すべての人の成功のために設計されたAIで、自動トレードの未来へ踏み出しましょう。',
+        footer_desc_new: '私の経験が、道を見失っている他のトレーダーの助けになることを願っています。',
         footer_menu_title: 'メニュー',
         footer_menu_1: '主要機能',
         footer_menu_2: '料金',
@@ -480,7 +483,7 @@ const translations = {
         back_home: 'ホームに戻る',
 
         // New Main Page Sections
-        about_title: 'ABOUT <span class="text-gradient">WAITINGGOD</span>',
+        about_title: 'Hey <type-writer class="text-gradient" words="TRADER, INVESTOR, WINNER" speed="80" delay="2500"></type-writer>',
         about_p1: 'WaitingGodは、「優れたシステムは感情を排除しなければならない」と信じるクオンツ開発者と機関投資家による共同プロジェクトです。',
         about_p2: 'FX市場はボラティリティと不確実性に満ちています。私たちは、数百万時間のデータでトレーニングされたAIを開発し、すべての取引を体系的に分析しています。すべての決定は恐怖や偏見にとらわれず、100％統計的かつ計算主導で行われます。',
         about_p3: '私たちの目標は、この知識をすべての投資家に引き継ぎ、継続的な損失を防ぎ、検証可能なキャッシュフローを生み出すことです。私たちはシステムを利用して自分たちの資金をトレードしている実際のトレーダーです。',
@@ -515,7 +518,7 @@ const translations = {
         blog_subtext: '200以上の無料記事 · 購読して新しい投稿を受け取る',
         blog_cat_all: 'すべて',
         blog_cat_strategy: '取引戦略',
-        blog_cat_psychology: 'トレード心理',
+        blog_cat_psychology: '🧠トレード心理',
         blog_cat_books: 'トレード本',
         blog_cat_tech: 'テクニカル分析',
         blog_cat_quotes: '名言',
@@ -642,17 +645,6 @@ document.addEventListener('DOMContentLoaded', () => {
     buildLangMenu();
     updateTrigger(currentLang);
     applyTranslations(currentLang);
-
-    // Fallback: also handle old globe-btn clicks (pages not yet updated)
-    document.querySelectorAll('.lang-globe-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const dropdown = btn.closest('.lang-dropdown');
-            const wasOpen = dropdown.classList.contains('open');
-            document.querySelectorAll('.lang-dropdown').forEach(d => d.classList.remove('open'));
-            if (!wasOpen) dropdown.classList.add('open');
-        });
-    });
 
     document.addEventListener('click', () => {
         document.querySelectorAll('.lang-dropdown').forEach(d => d.classList.remove('open'));

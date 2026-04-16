@@ -10,12 +10,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css?v=1.3">
 </head>
 
 <body>
+
+
     <!-- Background System -->
     <div class="bg-layer">
         <div class="glow-orb orb-1"></div>
@@ -31,12 +33,12 @@
                 <span class="logo-text"><span class="logo-accent">Waiting</span>God</span>
             </a>
             <ul class="nav-links">
-                <li><a href="pages/blog.html" data-i18n="nav_features">Blog</a></li>
+                <li><a href="pages/blog.html" data-i18n="nav_features">บล็อก</a></li>
                 <li><a href="pages/wealth-machine.html#performance" data-i18n="nav_performance">ผลงาน</a></li>
                 <li><a href="pages/wealth-machine.html#pricing" data-i18n="nav_pricing">แพ็คเกจ</a></li>
                 <li class="nav-dropdown">
                     <button class="nav-dropdown-btn">
-                        <span data-i18n="nav_resource">Resource</span>
+                        <span data-i18n="nav_resource">เพิ่มเติม</span>
                         <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
@@ -53,9 +55,9 @@
                                 </svg>
                             </div>
                             <div class="item-content">
-                                <span class="title" data-i18n="res_1_title">Wealth Machine</span>
-                                <span class="desc" data-i18n="res_1_desc">Create financial freedom with EA robot
-                                    trade.</span>
+                                <span class="title" data-i18n="res_1_title">เครื่องจักรสร้างความมั่งคั่ง</span>
+                                <span class="desc" data-i18n="res_1_desc">สร้างอิสรภาพทางการเงินด้วย<br>EA robot trade
+                                </span>
                             </div>
                         </a>
                         <a href="pages/psychology.html" class="nav-dropdown-item">
@@ -68,9 +70,8 @@
                                 </svg>
                             </div>
                             <div class="item-content">
-                                <span class="title" data-i18n="res_2_title">Psychology</span>
-                                <span class="desc" data-i18n="res_2_desc">All psychology you need to know in
-                                    trading.</span>
+                                <span class="title" data-i18n="res_2_title">อีบุ๊ก</span>
+                                <span class="desc" data-i18n="res_2_desc">ความรู้ที่คุณหาที่ไหนไม่ได้อีก</span>
                             </div>
                         </a>
                         <a href="pages/tools.html" class="nav-dropdown-item">
@@ -87,7 +88,7 @@
                                 <span class="desc" data-i18n="res_3_desc">เข้าถึงฟีเจอร์เครื่องมือที่หลากหลาย</span>
                             </div>
                         </a>
-                        <a href="#faq" class="nav-dropdown-item">
+                        <a href="pages/wealth-machine.html#faq" class="nav-dropdown-item">
                             <div class="item-icon">
                                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"
                                     viewBox="0 0 24 24">
@@ -97,8 +98,8 @@
                                 </svg>
                             </div>
                             <div class="item-content">
-                                <span class="title" data-i18n="res_4_title">FAQs</span>
-                                <span class="desc" data-i18n="res_4_desc">Get answers.</span>
+                                <span class="title" data-i18n="res_4_title">คำถามที่พบบ่อย</span>
+                                <span class="desc" data-i18n="res_4_desc">ค้นหาคำตอบที่คุณต้องการ</span>
                             </div>
                         </a>
                     </div>
@@ -109,7 +110,7 @@
                     <!-- trigger button is injected here by i18n.js -->
                     <div class="lang-menu"></div>
                 </div>
-                <a href="pages/login.html" class="btn btn-login" data-i18n="nav_login">Log In</a>
+                <a href="pages/login.html" class="btn btn-login" data-i18n="nav_login">เข้าสู่ระบบ</a>
                 <a href="#pricing" class="btn btn-primary nav-cta" data-i18n="nav_cta">เริ่มใช้งานเลย</a>
             </div>
             <div class="mobile-menu-btn">
@@ -120,24 +121,45 @@
         </div>
     </nav>
 
-
+    <!-- Main Brain Hero Section -->
+    <header class="hero main-hero">
+        <div class="hero-glow" style="left: 50%; transform: translateX(-50%); width: 60vw; height: 60vw;"></div>
+        <div class="hero-container"
+            style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem;">
+            <div class="hero-image-wrapper"
+                style="display: flex; justify-content: center; width: 100%; margin-top: -30px;">
+                <img src="assets/wireframe_brain.png" alt="Edge and Knowing Mind"
+                    style="width: 100%; max-width: 600px; mix-blend-mode: screen;">
+            </div>
+            <div class="hero-content reveal"
+                style="margin: 0 auto; max-width: 800px; display: flex; flex-direction: column; align-items: center;">
+                <h1 style="font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; line-height: 1.2;">
+                    Successful Trader = <br>
+                    <span class="text-gradient">Edge + Knowing mind</span>
+                </h1>
+                <p
+                    style="color: var(--text-color, white); font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 1.5rem; max-width: 600px;">
+                    Unlock the ultimate level of trading by mastering your inner game
+                </p>
+            </div>
+        </div>
+    </header>
 
     <!-- About Section -->
     <section id="about" class="section about-section">
         <div class="container about-container">
+            <div class="about-image">
+                <img src="assets/about_waitinggod.jpg" alt="WaitingGod Developer" class="about-img">
+            </div>
             <div class="about-content">
-                <h2 data-i18n="about_title">ABOUT <span class="text-gradient">WAITINGGOD</span></h2>
-                <p data-i18n="about_p1">WaitingGod เป็นการรวมตัวของนักพัฒนาระบบเทรด (Quant Developer) และเทรดเดอร์สถาบัน
-                    ที่มีความเชื่อว่า "ระบบที่ดีต้องไม่มีการใช้อารมณ์"</p>
-                <p data-i18n="about_p2">ตลาด Forex เต็มไปด้วยความผันผวนและความไม่แน่นอน เราจึงพัฒนาระบบ AI
-                    ที่ถูกฝึกฝนด้วยข้อมูลนับล้านชั่วโมง เพื่อตรวจสอบทุกจังหวะเข้าเทรดอย่างเป็นระบบ
-                    การตัดสินใจทั้งหมดมาจากสถิติและการคำนวณแบบ 100% ไร้ซึ่งความกลัวและอคติ</p>
+                <h2 data-i18n="about_title">Hey! <span class="text-gradient">Trader</span></h2>
+                <p data-i18n="about_p1">สวัสดีครับ ผม ดีโด้(WaitingGod) เป็นเทรดเดอร์ในตลาด Forex กว่า 8 ปี
+                    และได้เกษียณตัวเองในวัย 27 ปี ผมอยากใช้พื้นที่ในส่วนนี้ช่วยเหลือเทรดเดอร์ที่ยังขาดทุนอยู่
+                    ให้ถึงฝันของทุกท่านให้เร็วที่สุดครับ</p>
+                <p data-i18n="about_p2">เพียงแค่คุณเข้าใจว่าปัญหามันมาจากตัวคุณ ในวินาทีนั้นคุณก็ชนะตลาดแล้ว</p>
                 <p data-i18n="about_p3">เป้าหมายของเราคือการส่งผ่านองค์ความรู้นี้ไปสู่นักลงทุนทุกคน
                     เพื่อปิดประตูขาดทุนและสร้างกระแสเงินสดที่ตรวจสอบได้จริง เราไม่ใช่แค่คนขายบอท
                     แต่เราคือเทรดเดอร์ที่ใช้ระบบนี้เทรดเงินจริงๆ ของเราเอง</p>
-            </div>
-            <div class="about-image">
-                <img src="assets/about_waitinggod.jpg" alt="WaitingGod Developer" class="about-img">
             </div>
         </div>
     </section>
@@ -146,47 +168,199 @@
     <section id="compare" class="section compare-section">
         <div class="container">
             <div class="section-header">
-                <span class="compare-subtitle" data-i18n="compare_sub">COMPARE</span>
-                <h2 data-i18n="compare_title">CHANGE YOUR TRADING.</h2>
+                <span class="compare-subtitle" data-i18n="compare_sub">เปรียบเทียบ</span>
+                <h2 data-i18n="compare_title">เทรดเดอร์ทั่วไป vs เทรดเดอร์มืออาชีพ</h2>
             </div>
-            <div class="compare-grid">
-                <div class="compare-card past-card">
-                    <h3 data-i18n="past_title" class="danger-text">THAT WAS THE PAST.</h3>
-                    <ul class="compare-list past-list">
-                        <li><span class="icon red-icon">✖</span>
-                            <p data-i18n="past_1">คุณต้องนั่งเฝ้ากราฟหน้าจอทั้งวันเพื่อหาจังหวะเข้าเทรด</p>
-                        </li>
-                        <li><span class="icon red-icon">✖</span>
-                            <p data-i18n="past_2">ใช้อารมณ์ในการตัดสินใจเวลาเกิดความกังวล ทำให้ผิดพลาดซ้ำเดิม</p>
-                        </li>
-                        <li><span class="icon red-icon">✖</span>
-                            <p data-i18n="past_3">ความกดดันและความเครียดสูงจากการเดาทิศทางตลาดที่ควบคุมไม่ได้</p>
-                        </li>
-                        <li><span class="icon red-icon">✖</span>
-                            <p data-i18n="past_4">พอร์ตแตกเพราะไม่มีวินัยในการตั้ง Stop Loss อย่างเคร่งครัด</p>
-                        </li>
-                    </ul>
+            <div class="compare-slider-container" id="compareSliderContainer">
+                <style>
+                    .compare-slider-container {
+                        position: relative;
+                        width: 100%;
+                        max-width: 1000px;
+                        margin: 3rem auto 0;
+                        border-radius: 24px;
+                        overflow: hidden;
+                        user-select: none;
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        grid-template-rows: 1fr;
+                        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+                        background: #0b1120;
+                    }
+
+                    .compare-layer {
+                        grid-column: 1 / 2;
+                        grid-row: 1 / 2;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .compare-future {
+                        clip-path: inset(0 50% 0 0);
+                        /* Visible on left */
+                        z-index: 2;
+                        background: rgba(194, 9, 197, 0.119);
+                        /* slightly solid base */
+                    }
+
+                    .compare-past {
+                        clip-path: inset(0 0 0 50%);
+                        /* Visible on right */
+                        z-index: 1;
+                        background: rgba(220, 38, 38, 0.05);
+                    }
+
+                    .compare-layer .compare-card {
+                        height: 100%;
+                        margin: 0;
+                        border-radius: 0;
+                        border: none;
+                        background: transparent;
+                        box-shadow: none;
+                    }
+
+                    /* Handle styling */
+                    .compare-handle {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 50%;
+                        width: 4px;
+                        background: rgba(255, 255, 255, 0.8);
+                        cursor: ew-resize;
+                        z-index: 3;
+                        transform: translateX(-50%);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .compare-handle .handle-icon {
+                        width: 44px;
+                        height: 44px;
+                        background: #fff;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+                        color: #1f2937;
+                        transition: transform 0.2s ease, box-shadow 0.2s ease;
+                    }
+
+                    .compare-slider-container.dragging .handle-icon {
+                        transform: scale(1.15);
+                        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+                    }
+                </style>
+
+                <!-- Future Layer (Left Side) -->
+                <div class="compare-layer compare-future" id="compareFutureLayer">
+                    <div class="compare-card future-card">
+                        <h3 data-i18n="future_title" class="success-text">เทรดเดอร์มืออาชีพ</h3>
+                        <ul class="compare-list future-list">
+                            <li><span class="icon blue-icon">✔️</span>
+                                <p data-i18n="future_1">มีจิตผู้รู้ เห็นจิตที่คิดปรุงแต่ง รู้ว่าอารมณ์ไม่ใช่ตัวเรา</p>
+                            </li>
+                            <li><span class="icon blue-icon">✔️</span>
+                                <p data-i18n="future_2">มีระบบเทรดที่ชัดเจน มีความได้เปรียบในระยะยาว
+                                    มีสถิติรองรับในทุกสภาวะตลาด</p>
+                            </li>
+                            <li><span class="icon blue-icon">✔️</span>
+                                <p data-i18n="future_3">ไม่เปิดกราฟดูโดยไม่รู้ตัว</p>
+                            </li>
+                            <li><span class="icon blue-icon">✔️</span>
+                                <p data-i18n="future_4">หยุดตามใจกิเลส โฟกัสในสิ่งที่ "ต้องทำ" เท่านั้น
+                                    เพื่อไปสู่เป้าหมายของตนเอง</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="compare-card future-card glass-card">
-                    <h3 data-i18n="future_title" class="success-text">THIS WILL BE THE FUTURE.</h3>
-                    <ul class="compare-list future-list">
-                        <li><span class="icon blue-icon">✔️</span>
-                            <p data-i18n="future_1">ระบบการเทรดอัตโนมัติ 24/7 คุณสามารถใช้ชีวิตได้อย่างอิสระ</p>
-                        </li>
-                        <li><span class="icon blue-icon">✔️</span>
-                            <p data-i18n="future_2">กฎเกณฑ์การเข้าเทรดเป็นไปตามสถิติ ไร้ซึ่งอารมณ์เข้ามาเกี่ยวข้อง 100%
-                            </p>
-                        </li>
-                        <li><span class="icon blue-icon">✔️</span>
-                            <p data-i18n="future_3">เข้าถึงระบบวิเคราะห์ตลาด พิมพ์เขียว
-                                และเครื่องมือสำหรับบริหารพอร์ตครบจบ</p>
-                        </li>
-                        <li><span class="icon blue-icon">✔️</span>
-                            <p data-i18n="future_4">มีการคำนวณ Stop Loss ล่วงหน้า ปกป้องเงินทุนตั้งแต่เริ่มต้นเทรด</p>
-                        </li>
-                    </ul>
+
+                <!-- Past Layer (Right Side) -->
+                <div class="compare-layer compare-past" id="comparePastLayer">
+                    <div class="compare-card past-card">
+                        <h3 data-i18n="past_title" class="danger-text">เทรดเดอร์ทั่วไป</h3>
+                        <ul class="compare-list past-list">
+                            <li><span class="icon red-icon">✖</span>
+                                <p data-i18n="past_1">ไม่มีจิตผู้รู้ หลงอยู่ในโลกของการเทรดตลอดเวลา</p>
+                            </li>
+                            <li><span class="icon red-icon">✖</span>
+                                <p data-i18n="past_2">ไม่มีระบบเทรดที่ชัดเจน หรือมี แต่เป็นระบบที่ไม่มีความได้เปรียบ
+                                    เข้า-ออกออเดอร์โดยไร้เหตุผล</p>
+                            </li>
+                            <li><span class="icon red-icon">✖</span>
+                                <p data-i18n="past_3">นั่งเฝ้าหน้าจอทั้งวัน เปิดมือถือดูกราฟตลอด โดยไม่รู้ตัว</p>
+                            </li>
+                            <li><span class="icon red-icon">✖</span>
+                                <p data-i18n="past_4">ตามหาท่าเทรด อยากเรียนรู้ทุกศาสตร์ แต่ไม่เคยมองกลับเข้ามาที่ตนเอง
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Slider Handle -->
+                <div class="compare-handle" id="compareHandle">
+                    <div class="handle-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="15" y1="18" x2="9" y2="12"></line>
+                            <line x1="9" y1="6" x2="15" y2="12"></line>
+                        </svg>
+                    </div>
                 </div>
             </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const container = document.getElementById('compareSliderContainer');
+                    const futureLayer = document.getElementById('compareFutureLayer');
+                    const pastLayer = document.getElementById('comparePastLayer');
+                    const handle = document.getElementById('compareHandle');
+                    if (!container) return;
+
+                    let isDragging = false;
+                    let currentPercent = 50;
+
+                    const updateSlider = (percent) => {
+                        futureLayer.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+                        pastLayer.style.clipPath = `inset(0 0 0 ${percent}%)`;
+                        handle.style.left = `${percent}%`;
+                    };
+
+                    const handleMove = (clientX) => {
+                        if (!isDragging) return;
+                        const rect = container.getBoundingClientRect();
+                        let newPosition = ((clientX - rect.left) / rect.width) * 100;
+                        newPosition = Math.max(0, Math.min(100, newPosition));
+                        currentPercent = newPosition;
+                        updateSlider(newPosition);
+                    };
+
+                    const endDrag = () => {
+                        isDragging = false;
+                        container.classList.remove('dragging');
+                    };
+                    const startDrag = () => {
+                        isDragging = true;
+                        container.classList.add('dragging');
+                    };
+
+                    container.addEventListener('mousedown', startDrag);
+                    window.addEventListener('mousemove', (e) => handleMove(e.clientX));
+                    window.addEventListener('mouseup', endDrag);
+
+                    container.addEventListener('touchstart', (e) => {
+                        startDrag();
+                        handleMove(e.touches[0].clientX);
+                    }, { passive: true });
+                    window.addEventListener('touchmove', (e) => {
+                        handleMove(e.touches[0].clientX);
+                    }, { passive: true });
+                    window.addEventListener('touchend', endDrag);
+                });
+            </script>
         </div>
     </section>
 
@@ -196,9 +370,9 @@
         <div class="container footer-content-new">
             <div class="footer-col brand-col">
                 <h3 class="footer-title-lg" style="margin-bottom:0.5rem;"><span class="logo-accent"
-                        style="color:var(--primary-neon);">Waiting</span><br>God</h3>
-                <p class="footer-desc-new" data-i18n="footer_desc_new">ก้าวสู่อนาคตของการเทรดอัตโนมัติด้วย AI
-                    ที่ออกแบบมาเพื่อชัยชนะของทุกคน พร้อมรับข่าวสารและข้อเสนอพิเศษ</p>
+                        style="color:var(--primary-neon);">Waiting</span>God</h3>
+                <p class="footer-desc-new" data-i18n="footer_desc_new">ผมหวังว่าประสบการณ์ของผม จะช่วยเหลือเพื่อน ๆ
+                    เทรดเดอร์ที่หลงทางได้</p>
                 <div class="footer-subscribe-box">
                     <input type="email" placeholder="Enter your email" aria-label="Enter your email">
                     <button class="btn-subscribe-icon" aria-label="Subscribe">
@@ -214,26 +388,27 @@
             <div class="footer-col links-col">
                 <h4 class="footer-title" data-i18n="footer_menu_title">เมนู</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="pages/blog.html">Blog</a></li>
-                    <li><a href="pages/wealth-machine.html">Wealth Machine</a></li>
-                    <li><a href="pages/psychology.html">Psychology</a></li>
-                    <li><a href="pages/tools.html">Tools</a></li>
+                    <li><a href="index.html">หน้าหลัก</a></li>
+                    <li><a href="pages/blog.html">บล็อก</a></li>
+                    <li><a href="pages/wealth-machine.html">เครื่องจักรสร้างความมั่งคั่ง</a></li>
+                    <li><a href="pages/psychology.html">จิตวิทยาการเทรด</a></li>
+                    <li><a href="pages/tools.html">เครื่องมือ</a></li>
                 </ul>
             </div>
 
             <div class="footer-col contact-col">
-                <h4 class="footer-title" data-i18n="footer_support_title">Support</h4>
+                <h4 class="footer-title" data-i18n="footer_support_title">ซัพพอร์ต</h4>
                 <ul>
-                    <li><a href="#faq" data-i18n="footer_menu_4">คำถามที่พบบ่อย (FAQ)</a></li>
-                    <li><a href="#" data-i18n="footer_contact">ติดต่อเรา</a></li>
+                    <li><a href="pages/wealth-machine.html#faq" data-i18n="footer_menu_4">คำถามที่พบบ่อย (FAQ)</a></li>
+                    <li>ติดต่อเรา<br>tepatip.po@gmail.com</li>
                 </ul>
             </div>
 
             <div class="footer-col social-col">
-                <h4 class="footer-title" data-i18n="footer_follow_us">Follow Us</h4>
+                <h4 class="footer-title" data-i18n="footer_follow_us">ติดตามเรา</h4>
                 <div class="social-links">
-                    <a href="#" class="social-icon" aria-label="Facebook"><svg width="20" height="20" fill="none"
+                    <a href="https://www.facebook.com/share/14Vu3JQkZs8/?mibextid=wwXIfr" target="_blank"
+                        class="social-icon" aria-label="Facebook"><svg width="20" height="20" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             viewBox="0 0 24 24">
                             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3.81l.39-4h-4.2V7a1 1 0 011-1h3z"></path>
@@ -257,11 +432,12 @@
         </div>
         <div class="container">
             <div class="footer-bottom-new">
-                <p data-i18n="copyright">&copy; 2026 WaitingGod Intelligence. All rights reserved.</p>
+                <p data-i18n="copyright">&copy; 2026 WaitingGod Intelligence. สงวนลิขสิทธิ์.</p>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/i18n.js?v=1.1"></script>
     <script src="js/script.js?v=1.3"></script>
 </body>

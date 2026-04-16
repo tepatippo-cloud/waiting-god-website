@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="blog_title">Blog - WaitingGod</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css?v=1.3">
     <style>
         /* ===== SCROLL ANIMATIONS ===== */
@@ -15,6 +18,7 @@
             transform: translateY(30px);
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
@@ -68,7 +72,7 @@
             font-size: 1rem;
             font-family: inherit;
         }
-        
+
         .blog-subscribe input:focus {
             outline: none;
         }
@@ -106,7 +110,7 @@
             position: relative;
             z-index: 2;
         }
-        
+
         .blog-categories::-webkit-scrollbar {
             display: none;
         }
@@ -166,7 +170,8 @@
         .blog-card-img-wrap {
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio */
             background: #1a2235;
             overflow: hidden;
         }
@@ -288,40 +293,108 @@
         }
 
         @keyframes float-up {
-            0% { transform: translateY(110vh) rotate(0deg) scale(0.8); opacity: 0; }
-            10% { opacity: 0.3; }
-            50% { opacity: 0.4; }
-            90% { opacity: 0.3; }
-            100% { transform: translateY(-10vh) rotate(360deg) scale(1.2); opacity: 0; }
+            0% {
+                transform: translateY(110vh) rotate(0deg) scale(0.8);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+
+            90% {
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: translateY(-10vh) rotate(360deg) scale(1.2);
+                opacity: 0;
+            }
         }
 
-        .sv-1 { left: 10%; width: 60px; height: 60px; animation-duration: 25s; animation-delay: 0s; }
-        .sv-2 { left: 80%; width: 80px; height: 80px; animation-duration: 30s; animation-delay: 4s; }
-        .sv-3 { left: 40%; width: 50px; height: 50px; animation-duration: 22s; animation-delay: 8s; }
-        .sv-4 { left: 60%; width: 90px; height: 90px; animation-duration: 35s; animation-delay: 12s; }
-        .sv-5 { left: 25%; width: 70px; height: 70px; animation-duration: 28s; animation-delay: 16s; }
+        .sv-1 {
+            left: 10%;
+            width: 60px;
+            height: 60px;
+            animation-duration: 25s;
+            animation-delay: 0s;
+        }
 
+        .sv-2 {
+            left: 80%;
+            width: 80px;
+            height: 80px;
+            animation-duration: 30s;
+            animation-delay: 4s;
+        }
+
+        .sv-3 {
+            left: 40%;
+            width: 50px;
+            height: 50px;
+            animation-duration: 22s;
+            animation-delay: 8s;
+        }
+
+        .sv-4 {
+            left: 60%;
+            width: 90px;
+            height: 90px;
+            animation-duration: 35s;
+            animation-delay: 12s;
+        }
+
+        .sv-5 {
+            left: 25%;
+            width: 70px;
+            height: 70px;
+            animation-duration: 28s;
+            animation-delay: 16s;
+        }
     </style>
 </head>
+
 <body>
     <!-- Background System -->
     <div class="bg-layer">
         <div class="glow-orb orb-1"></div>
         <div class="glow-orb orb-2"></div>
         <div class="grid-overlay"></div>
-        
+
         <!-- Animated Symbols (Books & Trading Icons) -->
         <div class="floating-symbols">
             <!-- Book SVG -->
-            <svg class="float-sv sv-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            <svg class="float-sv sv-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                </path>
+            </svg>
             <!-- Candlestick SVG -->
-            <svg class="float-sv sv-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M9 9l3 3 3-3 5 5"></path></svg>
+            <svg class="float-sv sv-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M9 9l3 3 3-3 5 5"></path>
+            </svg>
             <!-- Open Book -->
-            <svg class="float-sv sv-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path></svg>
+            <svg class="float-sv sv-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25">
+                </path>
+            </svg>
             <!-- Briefcase / Portfolio -->
-            <svg class="float-sv sv-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.896 2.083-2.083 2.083H5.833c-1.187 0-2.083-.989-2.083-2.083v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.027-.39.05-.582.071m-14.102.071A48.067 48.067 0 013 14.15m0 0A2.18 2.18 0 012.25 12.49V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z"></path></svg>
+            <svg class="float-sv sv-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M20.25 14.15v4.25c0 1.094-.896 2.083-2.083 2.083H5.833c-1.187 0-2.083-.989-2.083-2.083v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.027-.39.05-.582.071m-14.102.071A48.067 48.067 0 013 14.15m0 0A2.18 2.18 0 012.25 12.49V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z">
+                </path>
+            </svg>
             <!-- Chart Bar -->
-            <svg class="float-sv sv-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"></path></svg>
+            <svg class="float-sv sv-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z">
+                </path>
+            </svg>
         </div>
     </div>
 
@@ -332,41 +405,73 @@
                 <span class="logo-text"><span class="logo-accent">Waiting</span>God</span>
             </a>
             <ul class="nav-links">
-                <li><a href="blog.html" class="nav-active" data-i18n="nav_features" style="color: var(--primary-neon);">Blog</a></li>
+                <li><a href="blog.html" data-i18n="nav_features">บล็อก</a></li>
                 <li><a href="wealth-machine.html#performance" data-i18n="nav_performance">ผลงาน</a></li>
                 <li><a href="wealth-machine.html#pricing" data-i18n="nav_pricing">แพ็คเกจ</a></li>
                 <li class="nav-dropdown">
                     <button class="nav-dropdown-btn">
-                        <span data-i18n="nav_resource">Resource</span>
-                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                        <span data-i18n="nav_resource">เพิ่มเติม</span>
+                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
                     </button>
                     <div class="nav-dropdown-menu mega-menu">
                         <a href="wealth-machine.html" class="nav-dropdown-item">
-                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg></div>
+                            <div class="item-icon">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                    </path>
+                                </svg>
+                            </div>
                             <div class="item-content">
-                                <span class="title" data-i18n="res_1_title">Wealth Machine</span>
-                                <span class="desc" data-i18n="res_1_desc">Create financial freedom with EA robot trade.</span>
+                                <span class="title" data-i18n="res_1_title">เครื่องจักรสร้างความมั่งคั่ง</span>
+                                <span class="desc" data-i18n="res_1_desc">สร้างอิสรภาพทางการเงินด้วย<br>EA robot trade
+                                </span>
                             </div>
                         </a>
                         <a href="psychology.html" class="nav-dropdown-item">
-                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></div>
+                            <div class="item-icon">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                                    </path>
+                                </svg>
+                            </div>
                             <div class="item-content">
-                                <span class="title" data-i18n="res_2_title">Psychology</span>
-                                <span class="desc" data-i18n="res_2_desc">All psychology you need to know in trading.</span>
+                                <span class="title" data-i18n="res_2_title">อีบุ๊ก</span>
+                                <span class="desc" data-i18n="res_2_desc">ความรู้ที่คุณหาที่ไหนไม่ได้อีก</span>
                             </div>
                         </a>
                         <a href="tools.html" class="nav-dropdown-item">
-                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg></div>
+                            <div class="item-icon">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z">
+                                    </path>
+                                </svg>
+                            </div>
                             <div class="item-content">
                                 <span class="title" data-i18n="res_3_title">เครื่องมือ</span>
                                 <span class="desc" data-i18n="res_3_desc">เข้าถึงฟีเจอร์เครื่องมือที่หลากหลาย</span>
                             </div>
                         </a>
-                        <a href="../index.html#faq" class="nav-dropdown-item">
-                            <div class="item-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                        <a href="wealth-machine.html#faq" class="nav-dropdown-item">
+                            <div class="item-icon">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                    </path>
+                                </svg>
+                            </div>
                             <div class="item-content">
-                                <span class="title" data-i18n="res_4_title">FAQs</span>
-                                <span class="desc" data-i18n="res_4_desc">Get answers.</span>
+                                <span class="title" data-i18n="res_4_title">คำถามที่พบบ่อย</span>
+                                <span class="desc" data-i18n="res_4_desc">ค้นหาคำตอบที่คุณต้องการ</span>
                             </div>
                         </a>
                     </div>
@@ -374,10 +479,11 @@
             </ul>
             <div class="nav-right">
                 <div class="lang-dropdown">
+                    <!-- trigger button is injected here by i18n.js -->
                     <div class="lang-menu"></div>
                 </div>
-                <a href="login.html" class="btn btn-login" data-i18n="nav_login">Log In</a>
-                <a href="wealth-machine.html#pricing" class="btn btn-primary nav-cta" data-i18n="nav_cta">เริ่มใช้งานเลย</a>
+                <a href="login.html" class="btn btn-login" data-i18n="nav_login">เข้าสู่ระบบ</a>
+                <a href="../index.html#pricing" class="btn btn-primary nav-cta" data-i18n="nav_cta">เริ่มใช้งานเลย</a>
             </div>
             <div class="mobile-menu-btn">
                 <div class="bar"></div>
@@ -386,6 +492,7 @@
             </div>
         </div>
     </nav>
+
 
     <!-- Main Content -->
     <main class="container">
@@ -403,7 +510,7 @@
         <div class="blog-categories">
             <div class="category-pill active" data-i18n="blog_cat_all">All</div>
             <div class="category-pill" data-i18n="blog_cat_strategy">Trading Strategies</div>
-            <div class="category-pill" data-i18n="blog_cat_psychology">Trading Psychology</div>
+            <div class="category-pill" data-i18n="blog_cat_psychology">🧠จิตวิทยาการเทรด</div>
             <div class="category-pill" data-i18n="blog_cat_books">Trading Books</div>
             <div class="category-pill" data-i18n="blog_cat_tech">Technical Analysis</div>
             <div class="category-pill" data-i18n="blog_cat_quotes">Quotes</div>
@@ -412,14 +519,45 @@
         <!-- Grid -->
         <div class="blog-grid">
 
-            <!-- Card 7 (Newest) -->
-            <a href="blog-post-7.html" class="blog-card reveal" style="transition-delay: 0ms; text-decoration:none;">
+            <!-- Card 9 (Newest) -->
+            <a href="blog-post-9.html" class="blog-card reveal" style="transition-delay: 0ms; text-decoration:none;">
+                <div class="blog-card-img-wrap">
+                    <img src="../assets/blog_cover_follow_plan.png" alt="แด่เทรดเดอร์ที่ทำตามระบบไม่เคยได้">
+                </div>
+                <div class="blog-card-content">
+                    <span class="blog-badge" data-i18n="blog_cat_psychology">🧠จิตวิทยาการเทรด</span>
+                    <h2 class="blog-card-title" style="font-family: 'Sarabun', sans-serif;">แด่เทรดเดอร์ที่ทำตามระบบไม่เคยได้</h2>
+                    <div class="blog-card-footer">
+                        <span>April 15, 2026</span>
+                        <span>5 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 8 -->
+            <a href="blog-post-8.html" class="blog-card reveal" style="transition-delay: 15ms; text-decoration:none;">
+                <div class="blog-card-img-wrap">
+                    <img src="../assets/blog_cover_variable_y.png" alt="ตัวแปรด้านสภาพแวดล้อม">
+                </div>
+                <div class="blog-card-content">
+                    <span class="blog-badge" data-i18n="blog_cat_psychology">🧠จิตวิทยาการเทรด</span>
+                    <h2 class="blog-card-title" style="font-family: 'Sarabun', sans-serif;">ตัวแปรด้านสภาพแวดล้อม</h2>
+                    <div class="blog-card-footer">
+                        <span>April 14, 2026</span>
+                        <span>4 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 7 -->
+            <a href="blog-post-7.html" class="blog-card reveal" style="transition-delay: 25ms; text-decoration:none;">
                 <div class="blog-card-img-wrap">
                     <img src="../assets/blog_cover_core_trader.png" alt="แก่นแท้ของอาชีพเทรดเดอร์">
                 </div>
                 <div class="blog-card-content">
-                    <span class="blog-badge" data-i18n="blog_cat_psychology">TRADING PSYCHOLOGY</span>
-                    <h2 class="blog-card-title" style="font-family: 'Sarabun', sans-serif;">แก่นแท้ของอาชีพเทรดเดอร์</h2>
+                    <span class="blog-badge" data-i18n="blog_cat_psychology">🧠จิตวิทยาการเทรด</span>
+                    <h2 class="blog-card-title" style="font-family: 'Sarabun', sans-serif;">แก่นแท้ของอาชีพเทรดเดอร์
+                    </h2>
                     <div class="blog-card-footer">
                         <span>April 13, 2026</span>
                         <span>4 min read</span>
@@ -433,8 +571,9 @@
                     <img src="../assets/blog_cover_inner_voice.png" alt="สงครามภายในที่เทรดเดอร์ต้องเจอ">
                 </div>
                 <div class="blog-card-content">
-                    <span class="blog-badge" data-i18n="blog_cat_psychology">TRADING PSYCHOLOGY</span>
-                    <h2 class="blog-card-title" style="font-family: 'Sarabun', sans-serif;">สงครามภายในที่เทรดเดอร์ต้องเจอ</h2>
+                    <span class="blog-badge" data-i18n="blog_cat_psychology">🧠จิตวิทยาการเทรด</span>
+                    <h2 class="blog-card-title" style="font-family: 'Sarabun', sans-serif;">
+                        สงครามภายในที่เทรดเดอร์ต้องเจอ</h2>
                     <div class="blog-card-footer">
                         <span>April 13, 2026</span>
                         <span>4 min read</span>
@@ -448,7 +587,7 @@
                     <img src="../assets/blog_cover_5percent.png" alt="TRADER แค่ 5% รู้จักสิ่งนี้">
                 </div>
                 <div class="blog-card-content">
-                    <span class="blog-badge" data-i18n="blog_cat_psychology">TRADING PSYCHOLOGY</span>
+                    <span class="blog-badge" data-i18n="blog_cat_psychology">🧠จิตวิทยาการเทรด</span>
                     <h2 class="blog-card-title">TRADER แค่ 5% รู้จักสิ่งนี้: ศัตรูที่คร่าชีวิตเทรดเดอร์</h2>
                     <div class="blog-card-footer">
                         <span>March 31, 2026</span>
@@ -463,7 +602,7 @@
                     <img src="../assets/blog_cover_habit.png" alt="รู้เท่าทันอารมณ์">
                 </div>
                 <div class="blog-card-content">
-                    <span class="blog-badge" data-i18n="blog_cat_psychology">TRADING PSYCHOLOGY</span>
+                    <span class="blog-badge" data-i18n="blog_cat_psychology">🧠จิตวิทยาการเทรด</span>
                     <h2 class="blog-card-title">รู้เท่าทันอารมณ์: กุญแจสำคัญสู่ความสำเร็จที่ยั่งยืน</h2>
                     <div class="blog-card-footer">
                         <span>April 2, 2026</span>
@@ -478,7 +617,7 @@
                     <img src="../assets/blog_cover_system.png" alt="เตรียมตัวแพ้ ถ้าไม่มีระบบเทรด">
                 </div>
                 <div class="blog-card-content">
-                    <span class="blog-badge" data-i18n="blog_cat_psychology">TRADING PSYCHOLOGY</span>
+                    <span class="blog-badge" data-i18n="blog_cat_psychology">🧠จิตวิทยาการเทรด</span>
                     <h2 class="blog-card-title">เตรียมตัวแพ้ ถ้าไม่มีระบบเทรด</h2>
                     <div class="blog-card-footer">
                         <span>April 7, 2026</span>
@@ -493,7 +632,7 @@
                     <img src="../assets/blog_cover_variable_x.png" alt="รู้จักตัวแปร X">
                 </div>
                 <div class="blog-card-content">
-                    <span class="blog-badge" data-i18n="blog_cat_psychology">TRADING PSYCHOLOGY</span>
+                    <span class="blog-badge" data-i18n="blog_cat_psychology">🧠จิตวิทยาการเทรด</span>
                     <h2 class="blog-card-title">รู้จักตัวแปร X ต้นตอพฤติกรรมแย่ ๆ ของเทรดเดอร์</h2>
                     <div class="blog-card-footer">
                         <span>April 10, 2026</span>
@@ -509,7 +648,8 @@
                 </div>
                 <div class="blog-card-content">
                     <span class="blog-badge" data-i18n="blog_cat_strategy">TRADING STRATEGIES</span>
-                    <h2 class="blog-card-title"><span data-i18n="blog_post_2_title">Stop Being An Operator, Start Being An Engineer Of Your Trading System</span></h2>
+                    <h2 class="blog-card-title"><span data-i18n="blog_post_2_title">Stop Being An Operator, Start Being
+                            An Engineer Of Your Trading System</span></h2>
                     <div class="blog-card-footer">
                         <span data-i18n="blog_post_2_date">March 4, 2026</span>
                         <span data-i18n="blog_post_2_time">18 min read</span>
@@ -524,7 +664,8 @@
                 </div>
                 <div class="blog-card-content">
                     <span class="blog-badge" data-i18n="blog_cat_strategy">TRADING STRATEGIES</span>
-                    <h2 class="blog-card-title"><span data-i18n="blog_post_3_title">The Power Of Asymmetric Returns: Why Winning 30% Of The Time Is Enough</span></h2>
+                    <h2 class="blog-card-title"><span data-i18n="blog_post_3_title">The Power Of Asymmetric Returns: Why
+                            Winning 30% Of The Time Is Enough</span></h2>
                     <div class="blog-card-footer">
                         <span data-i18n="blog_post_3_date">March 2, 2026</span>
                         <span data-i18n="blog_post_3_time">16 min read</span>
@@ -539,7 +680,8 @@
                 </div>
                 <div class="blog-card-content">
                     <span class="blog-badge" data-i18n="blog_cat_tech">TECHNICAL ANALYSIS</span>
-                    <h2 class="blog-card-title"><span data-i18n="blog_post_4_title">4 Key Types Of Stock Gaps Every Trader Should Know</span></h2>
+                    <h2 class="blog-card-title"><span data-i18n="blog_post_4_title">4 Key Types Of Stock Gaps Every
+                            Trader Should Know</span></h2>
                     <div class="blog-card-footer">
                         <span data-i18n="blog_post_4_date">December 9, 2025</span>
                         <span data-i18n="blog_post_4_time">10 min read</span>
@@ -553,8 +695,9 @@
                     <div style="width:100%; height:100%; background: linear-gradient(135deg, #7c2d12, #9a3412);"></div>
                 </div>
                 <div class="blog-card-content">
-                    <span class="blog-badge" data-i18n="blog_cat_psychology">TRADING PSYCHOLOGY</span>
-                    <h2 class="blog-card-title"><span data-i18n="blog_post_5_title">Stuck In A Trading Rut? 4 Proven Methods To Break Through</span></h2>
+                    <span class="blog-badge" data-i18n="blog_cat_psychology">🧠จิตวิทยาการเทรด</span>
+                    <h2 class="blog-card-title"><span data-i18n="blog_post_5_title">Stuck In A Trading Rut? 4 Proven
+                            Methods To Break Through</span></h2>
                     <div class="blog-card-footer">
                         <span data-i18n="blog_post_5_date">November 20, 2025</span>
                         <span data-i18n="blog_post_5_time">12 min read</span>
@@ -568,8 +711,9 @@
                     <div style="width:100%; height:100%; background: linear-gradient(135deg, #4c1d95, #5b21b6);"></div>
                 </div>
                 <div class="blog-card-content">
-                    <span class="blog-badge" data-i18n="blog_cat_psychology">TRADING PSYCHOLOGY</span>
-                    <h2 class="blog-card-title"><span data-i18n="blog_post_6_title">Why Trading Psychology Mirrors Elite Athletic Performance</span></h2>
+                    <span class="blog-badge" data-i18n="blog_cat_psychology">🧠จิตวิทยาการเทรด</span>
+                    <h2 class="blog-card-title"><span data-i18n="blog_post_6_title">Why Trading Psychology Mirrors Elite
+                            Athletic Performance</span></h2>
                     <div class="blog-card-footer">
                         <span data-i18n="blog_post_6_date">November 19, 2025</span>
                         <span data-i18n="blog_post_6_time">13 min read</span>
@@ -595,41 +739,64 @@
     <footer class="footer">
         <div class="container footer-content-new">
             <div class="footer-col brand-col">
-                <h3 class="footer-title-lg" style="margin-bottom:0.5rem;"><span class="logo-accent" style="color:var(--primary-neon);">Waiting</span><br>God</h3>
-                <p class="footer-desc-new" data-i18n="footer_desc_new">ก้าวสู่อนาคตของการเทรดอัตโนมัติด้วย AI ที่ออกแบบมาเพื่อชัยชนะของทุกคน พร้อมรับข่าวสารและข้อเสนอพิเศษ</p>
+                <h3 class="footer-title-lg" style="margin-bottom:0.5rem;"><span class="logo-accent"
+                        style="color:var(--primary-neon);">Waiting</span>God</h3>
+                <p class="footer-desc-new" data-i18n="footer_desc_new">ผมหวังว่าประสบการณ์ของผม จะช่วยเหลือเพื่อน ๆ
+                    เทรดเดอร์ที่หลงทางได้</p>
                 <div class="footer-subscribe-box">
                     <input type="email" placeholder="Enter your email" aria-label="Enter your email">
                     <button class="btn-subscribe-icon" aria-label="Subscribe">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
                     </button>
                 </div>
             </div>
-            
+
             <div class="footer-col links-col">
                 <h4 class="footer-title" data-i18n="footer_menu_title">เมนู</h4>
                 <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="wealth-machine.html">Wealth Machine</a></li>
-                    <li><a href="psychology.html">Psychology</a></li>
-                    <li><a href="tools.html">Tools</a></li>
+                    <li><a href="../index.html">หน้าหลัก</a></li>
+                    <li><a href="blog.html">บล็อก</a></li>
+                    <li><a href="wealth-machine.html">เครื่องจักรสร้างความมั่งคั่ง</a></li>
+                    <li><a href="psychology.html">จิตวิทยาการเทรด</a></li>
+                    <li><a href="tools.html">เครื่องมือ</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-col contact-col">
-                <h4 class="footer-title" data-i18n="footer_support_title">Support</h4>
+                <h4 class="footer-title" data-i18n="footer_support_title">ซัพพอร์ต</h4>
                 <ul>
-                    <li><a href="../index.html#faq" data-i18n="footer_menu_4">คำถามที่พบบ่อย (FAQ)</a></li>
-                    <li><a href="#" data-i18n="footer_contact">ติดต่อเรา</a></li>
+                    <li><a href="wealth-machine.html#faq" data-i18n="footer_menu_4">คำถามที่พบบ่อย (FAQ)</a></li>
+                    <li>ติดต่อเรา<br>tepatip.po@gmail.com</li>
                 </ul>
             </div>
-            
+
             <div class="footer-col social-col">
-                <h4 class="footer-title" data-i18n="footer_follow_us">Follow Us</h4>
+                <h4 class="footer-title" data-i18n="footer_follow_us">ติดตามเรา</h4>
                 <div class="social-links">
-                    <a href="#" class="social-icon" aria-label="Facebook"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3.81l.39-4h-4.2V7a1 1 0 011-1h3z"></path></svg></a>
-                    <a href="#" class="social-icon" aria-label="Twitter"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg></a>
-                    <a href="#" class="social-icon" aria-label="Instagram"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="https://www.facebook.com/share/14Vu3JQkZs8/?mibextid=wwXIfr" target="_blank"
+                        class="social-icon" aria-label="Facebook"><svg width="20" height="20" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3.81l.39-4h-4.2V7a1 1 0 011-1h3z"></path>
+                        </svg></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><svg width="20" height="20" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><svg width="20" height="20" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg></a>
                 </div>
             </div>
         </div>
@@ -643,4 +810,6 @@
     <script src="../js/i18n.js?v=1.3"></script>
     <script src="../js/script.js?v=1.2"></script>
 </body>
+
 </html>
+
