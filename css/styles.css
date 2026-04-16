@@ -1122,7 +1122,12 @@ canvas {
 
 /* About Section */
 .about-section {
-    padding: 100px 0;
+    padding: 50px 0;
+    background: rgb(29 6 33 / 95%);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.2);
 }
 
 .about-container {
@@ -1167,7 +1172,8 @@ canvas {
 
 .about-img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     display: block;
     border-radius: 20px;
 }
@@ -1343,6 +1349,7 @@ canvas {
     .about-container {
         flex-direction: column;
         text-align: center;
+        gap: 2.5rem;
     }
 
     .about-content h2 {
